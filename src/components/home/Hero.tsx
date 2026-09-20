@@ -84,24 +84,11 @@ export default function Hero() {
             <img
               src={avatar}
               alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-              className="absolute bottom-0 left-1/2 h-[80%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
+              className="absolute bottom-0 left-1/2 h-[94%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
               width={483}
               height={650}
               fetchPriority="high"
             />
-
-            <svg
-              className="absolute bottom-0 left-1/2 w-[78%] -translate-x-1/2"
-              viewBox="0 0 320 110"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path d="M0 90 L320 90 L296 110 L24 110 Z" fill="#071B38" opacity="0.9" />
-              <rect x="90" y="34" width="140" height="60" rx="8" fill="#0D3565" stroke="#1769D1" strokeWidth="2" />
-              <rect x="98" y="42" width="124" height="42" rx="3" fill="#0B294E" />
-              <circle cx="160" cy="63" r="4" fill="#FFD42A" />
-              <path d="M70 90 L250 90 L262 100 L58 100 Z" fill="#123A6B" />
-            </svg>
 
             <div className="absolute right-4 top-[38%] flex w-10 -translate-y-1/2 animate-float items-center justify-center rounded-xl bg-white p-2 shadow-lg sm:right-5 sm:w-11">
               <BookOpen className="text-blue" size={18} strokeWidth={2.2} />
