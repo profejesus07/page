@@ -2,6 +2,7 @@ import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import { navLinks } from "../../data/navigation";
 import { socialLinks } from "../../data/social";
 import Container from "../ui/Container";
+import SmartLink from "../ui/SmartLink";
 
 const year = new Date().getFullYear();
 
@@ -30,13 +31,13 @@ export default function Footer() {
         <nav aria-label="Enlaces del sitio" className="flex flex-col gap-3">
           <p className="text-sm font-bold uppercase tracking-wide text-white/50">Enlaces</p>
           {navLinks.map((link) => (
-            <a
+            <SmartLink
               key={link.href}
               href={link.href}
               className="w-fit text-sm text-white/75 transition-colors hover:text-yellow"
             >
               {link.label}
-            </a>
+            </SmartLink>
           ))}
         </nav>
 

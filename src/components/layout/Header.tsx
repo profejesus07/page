@@ -5,6 +5,7 @@ import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import { navLinks } from "../../data/navigation";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
+import SmartLink from "../ui/SmartLink";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +52,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <SmartLink
               key={link.href}
               href={link.href}
               className={
@@ -61,7 +62,7 @@ export default function Header() {
               }
             >
               {link.label}
-            </a>
+            </SmartLink>
           ))}
         </nav>
 
@@ -111,14 +112,14 @@ export default function Header() {
       >
         <Container className="flex flex-col gap-1 py-4">
           {navLinks.map((link) => (
-            <a
+            <SmartLink
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className="rounded-lg px-3 py-2.5 text-base font-semibold text-ink/80 transition-colors hover:bg-surface hover:text-blue"
             >
               {link.label}
-            </a>
+            </SmartLink>
           ))}
           <input
             type="search"

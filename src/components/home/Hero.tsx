@@ -41,7 +41,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={150} className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-navy via-navy to-blue-2/60 shadow-[0_30px_60px_-20px_rgba(9,38,74,0.45)] sm:max-w-lg lg:max-w-none">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-navy via-navy to-blue-2/60 shadow-[0_30px_60px_-20px_rgba(9,38,74,0.45)] sm:max-w-md lg:max-w-lg">
             <div className="bg-dot-grid absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]" />
 
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-yellow/25 blur-3xl" />
@@ -84,7 +84,7 @@ export default function Hero() {
             <img
               src={avatar}
               alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-              className="absolute bottom-[9%] left-1/2 h-[92%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
+              className="absolute bottom-[10%] left-1/2 h-[58%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
               width={480}
               height={600}
               fetchPriority="high"
