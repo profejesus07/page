@@ -51,19 +51,21 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link) => (
-            <SmartLink
-              key={link.href}
-              href={link.href}
-              className={
-                link.href === "#inicio"
-                  ? "rounded-full bg-yellow px-4 py-1.5 text-sm font-bold text-navy transition-colors"
-                  : "text-sm font-semibold text-ink/70 transition-colors hover:text-blue"
-              }
-            >
-              {link.label}
-            </SmartLink>
-          ))}
+          {navLinks
+            .filter((link) => link.primary)
+            .map((link) => (
+              <SmartLink
+                key={link.href}
+                href={link.href}
+                className={
+                  link.href === "#inicio"
+                    ? "rounded-full bg-yellow px-4 py-1.5 text-sm font-bold text-navy transition-colors"
+                    : "text-sm font-semibold text-ink/70 transition-colors hover:text-blue"
+                }
+              >
+                {link.label}
+              </SmartLink>
+            ))}
         </nav>
 
         <div className="flex items-center gap-2">

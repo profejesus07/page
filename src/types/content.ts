@@ -6,6 +6,8 @@ type IconComponent = ComponentType<SVGProps<SVGSVGElement> & { size?: number }>;
 export interface NavLink {
   label: string;
   href: string;
+  /** Se muestra en el menú de escritorio. En móvil y footer siempre aparecen todos. */
+  primary?: boolean;
 }
 
 export interface Category {

@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 type Variant = "primary" | "secondary" | "ghost-light";
 type Size = "md" | "lg";
@@ -47,11 +47,21 @@ export default function Button({
   ...rest
 }: LinkProps | ButtonProps) {
   const classes = `${base} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const { pathname } = useLocation();
 
   if (href) {
     const isExternal = href.startsWith("http");
     const isAnchor = href.startsWith("#");
     const isProtocolLink = href.startsWith("mailto:") || href.startsWith("tel:");
+
+    if (isAnchor && pathname !== "/") {
+      return (
+        <Link to={{ pathname: "/", hash: href }} className={classes}>
+          {children}
+          {icon}
+        </Link>
+      );
+    }
 
     if (isAnchor || isExternal || isProtocolLink) {
       return (
