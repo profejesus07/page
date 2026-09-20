@@ -1,4 +1,4 @@
-import { BookOpen, ClipboardCheck, Gamepad2, MonitorPlay } from "lucide-react";
+import { BookOpen, ClipboardCheck, MonitorPlay, Terminal } from "lucide-react";
 import type { Category } from "../types/content";
 
 export const categories: Category[] = [
@@ -11,12 +11,12 @@ export const categories: Category[] = [
     href: "/contenidos",
   },
   {
-    slug: "gamificacion",
-    title: "Gamificación",
-    description: "Juegos, retos y dinámicas para motivar y fortalecer el aprendizaje.",
-    icon: Gamepad2,
+    slug: "academia-code",
+    title: "Academia C.O.D.E.",
+    description: "Una misión gamificada para hackear el código de N.E.U.R.O.N. y liberar el pensamiento crítico.",
+    icon: Terminal,
     accent: "green",
-    href: "/gamificacion",
+    href: "/academia-code",
   },
   {
     slug: "recursos",

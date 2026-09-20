@@ -1,7 +1,8 @@
-import { BookOpen, ClipboardCheck, Gamepad2, LayoutDashboard, LogIn, MonitorPlay, Newspaper, Sparkles } from "lucide-react";
+import { BookOpen, ClipboardCheck, LayoutDashboard, LogIn, MonitorPlay, Newspaper, Sparkles } from "lucide-react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import ScrollToTop from "./components/layout/ScrollToTop";
+import AcademiaCodePage from "./pages/AcademiaCodePage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -24,16 +25,7 @@ export default function App() {
               />
             }
           />
-          <Route
-            path="gamificacion"
-            element={
-              <ComingSoonPage
-                icon={Gamepad2}
-                title="Gamificación"
-                description="Juegos, retos y dinámicas para motivar y fortalecer el aprendizaje. Muy pronto disponible."
-              />
-            }
-          />
+          <Route path="academia-code" element={<AcademiaCodePage />} />
           <Route
             path="recursos"
             element={

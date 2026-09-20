@@ -13,4 +13,11 @@ export const siteLinks = {
   youtube: "",
   instagram: "",
   facebook: "",
+
+  // Portales del proyecto Academia C.O.D.E.
+  academiaCode: {
+    portalEstudiante: "",
+    portalWeb: "",
+    gamificacion: "",
+  },
 };
