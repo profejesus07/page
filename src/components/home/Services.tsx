@@ -19,7 +19,8 @@ export default function Services() {
           />
           <p className="text-balance text-base leading-relaxed text-white/75 sm:text-lg">
             Diseño e implementación de experiencias de aprendizaje gamificadas, plataformas de
-            exámenes y recursos digitales personalizados para docentes y escuelas.
+            exámenes, aplicaciones a la medida y recursos digitales personalizados para docentes y
+            escuelas.
           </p>
         </FadeIn>
 
