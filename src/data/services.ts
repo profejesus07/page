@@ -1,4 +1,4 @@
-import { GraduationCap, LayoutTemplate, MonitorSmartphone, Sparkles, Users } from "lucide-react";
+import { GraduationCap, LayoutTemplate, MonitorSmartphone, Sparkles } from "lucide-react";
 import type { Service } from "../types/content";
 
 export const services: Service[] = [
@@ -22,10 +22,5 @@ export const services: Service[] = [
     description:
       "Desarrollo de aplicaciones a la medida para llevar asistencia, calificaciones, observador del estudiante u otros procesos, según lo que necesite el docente o la institución.",
     icon: MonitorSmartphone,
-  },
-  {
-    title: "Acompañamiento a docentes y escuelas",
-    description: "Asesoría para integrar tecnología y gamificación en el aula.",
-    icon: Users,
   },
 ];
