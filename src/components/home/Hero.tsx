@@ -41,15 +41,15 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={150} className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-navy via-navy to-blue-2/60 shadow-[0_30px_60px_-20px_rgba(9,38,74,0.45)] sm:max-w-md lg:max-w-lg">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[16rem] overflow-hidden rounded-[2rem] bg-gradient-to-br from-navy via-navy to-blue-2/60 shadow-[0_30px_60px_-20px_rgba(9,38,74,0.45)] sm:max-w-xs lg:max-w-sm">
             <div className="bg-dot-grid absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]" />
 
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-yellow/25 blur-3xl" />
-            <div className="absolute -bottom-16 -left-10 h-48 w-48 rounded-full bg-blue-2/40 blur-3xl" />
-            <div className="absolute left-1/2 top-[30%] h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-2/30 blur-3xl" />
+            <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-yellow/25 blur-2xl" />
+            <div className="absolute -bottom-10 -left-6 h-28 w-28 rounded-full bg-blue-2/40 blur-2xl" />
+            <div className="absolute left-1/2 top-[30%] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-2/30 blur-2xl" />
 
             <svg
-              className="absolute left-6 top-8 w-24 rotate-[-6deg] opacity-90 sm:left-8 sm:top-10 sm:w-28"
+              className="absolute left-4 top-5 w-16 rotate-[-6deg] opacity-90 sm:left-5 sm:top-6 sm:w-20"
               viewBox="0 0 120 84"
               fill="none"
               aria-hidden="true"
@@ -103,20 +103,20 @@ export default function Hero() {
               <path d="M70 90 L250 90 L262 100 L58 100 Z" fill="#123A6B" />
             </svg>
 
-            <div className="absolute right-6 top-[38%] flex w-16 -translate-y-1/2 animate-float items-center justify-center rounded-2xl bg-white p-3 shadow-xl sm:right-8 sm:w-[4.5rem]">
-              <BookOpen className="text-blue" size={26} strokeWidth={2.2} />
+            <div className="absolute right-4 top-[38%] flex w-10 -translate-y-1/2 animate-float items-center justify-center rounded-xl bg-white p-2 shadow-lg sm:right-5 sm:w-11">
+              <BookOpen className="text-blue" size={18} strokeWidth={2.2} />
             </div>
             <div
-              className="animate-float-slow absolute left-4 top-[16%] flex w-14 items-center justify-center rounded-2xl bg-white p-2.5 shadow-xl sm:w-16"
+              className="animate-float-slow absolute left-3 top-[16%] flex w-9 items-center justify-center rounded-xl bg-white p-1.5 shadow-lg sm:w-10"
               style={{ animationDelay: "1.2s" }}
             >
-              <Gamepad2 className="text-emerald-500" size={24} strokeWidth={2.2} />
+              <Gamepad2 className="text-emerald-500" size={16} strokeWidth={2.2} />
             </div>
             <div
-              className="animate-float absolute bottom-[16%] right-5 flex w-14 items-center justify-center rounded-2xl bg-white p-2.5 shadow-xl sm:w-16"
+              className="animate-float absolute bottom-[16%] right-3 flex w-9 items-center justify-center rounded-xl bg-white p-1.5 shadow-lg sm:w-10"
               style={{ animationDelay: "0.6s" }}
             >
-              <MonitorPlay className="text-violet-500" size={24} strokeWidth={2.2} />
+              <MonitorPlay className="text-violet-500" size={16} strokeWidth={2.2} />
             </div>
           </div>
         </FadeIn>
