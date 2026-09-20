@@ -16,8 +16,11 @@ export const siteLinks = {
 
   // Portales del proyecto Academia C.O.D.E.
   academiaCode: {
-    portalEstudiante: "",
-    portalWeb: "",
+    portalEstudiante: "http://192.168.1.4:5174/",
+    portalWeb: "https://profejesus365.github.io/code/",
     gamificacion: "",
   },
+
+  // Hub de recursos digitales educativos (recopilación propia)
+  recursosHub: "https://profejesus365.github.io/web/recursos/index.html",
 };

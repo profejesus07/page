@@ -1,4 +1,4 @@
-import { BookOpen, ClipboardCheck, LayoutDashboard, LogIn, MonitorPlay, Newspaper, Sparkles } from "lucide-react";
+import { BookOpen, ClipboardCheck, LayoutDashboard, LogIn, Newspaper, Sparkles } from "lucide-react";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import ScrollToTop from "./components/layout/ScrollToTop";
@@ -6,6 +6,7 @@ import AcademiaCodePage from "./pages/AcademiaCodePage";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import RecursosPage from "./pages/RecursosPage";
 
 export default function App() {
   return (
@@ -26,16 +27,7 @@ export default function App() {
             }
           />
           <Route path="academia-code" element={<AcademiaCodePage />} />
-          <Route
-            path="recursos"
-            element={
-              <ComingSoonPage
-                icon={MonitorPlay}
-                title="Recursos digitales"
-                description="Materiales interactivos, OVA, presentaciones, videos y más. Estamos trabajando en ello."
-              />
-            }
-          />
+          <Route path="recursos" element={<RecursosPage />} />
           <Route
             path="examenes"
             element={
