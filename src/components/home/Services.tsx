@@ -1,3 +1,6 @@
+import { Mail } from "lucide-react";
+import { WhatsAppIcon } from "../icons/SocialIcons";
+import { contactInfo } from "../../data/contact";
 import { services } from "../../data/services";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
@@ -43,10 +46,23 @@ export default function Services() {
           })}
         </div>
 
-        <FadeIn>
-          <Button href="/servicios" size="lg">
-            Conoce más
-          </Button>
+        <FadeIn className="flex flex-col items-center gap-4">
+          <p className="text-sm font-semibold uppercase tracking-wide text-white/60">
+            ¿Quieres conocer más? Escríbeme
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button href={contactInfo.whatsappHref} size="lg" icon={<WhatsAppIcon size={18} />}>
+              WhatsApp
+            </Button>
+            <Button
+              href={`mailto:${contactInfo.email}`}
+              variant="ghost-light"
+              size="lg"
+              icon={<Mail size={18} />}
+            >
+              {contactInfo.email}
+            </Button>
+          </div>
         </FadeIn>
       </Container>
     </section>

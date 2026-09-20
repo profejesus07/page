@@ -47,6 +47,14 @@ export function InstagramIcon({ size = 24, ...rest }: IconProps) {
   );
 }
 
+export function WhatsAppIcon({ size = 24, ...rest }: IconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...rest}>
+      <path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.5A10 10 0 1 0 12 2Zm5.8 14.2c-.3.8-1.5 1.5-2.4 1.6-.6.1-1.4.2-4.1-.9-3.1-1.3-5.1-4.4-5.3-4.6-.2-.3-1.3-1.7-1.3-3.2 0-1.5.8-2.3 1.1-2.6.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5.3.6.9 2 1 2.1.1.2.1.4 0 .6-.1.2-.2.3-.3.5-.2.2-.3.3-.5.5-.2.2-.3.4-.1.7.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.6.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.1.5.2.6.3.1.2.1.7-.2 1.4Z" />
+    </svg>
+  );
+}
+
 export function FacebookIcon({ size = 24, ...rest }: IconProps) {
   return (
     <svg

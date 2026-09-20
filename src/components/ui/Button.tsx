@@ -51,8 +51,9 @@ export default function Button({
   if (href) {
     const isExternal = href.startsWith("http");
     const isAnchor = href.startsWith("#");
+    const isProtocolLink = href.startsWith("mailto:") || href.startsWith("tel:");
 
-    if (isAnchor || isExternal) {
+    if (isAnchor || isExternal || isProtocolLink) {
       return (
         <a
           href={href}

@@ -6,9 +6,9 @@ interface SmartLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;
 }
 
-/** Ancla (#...) o URL externa usa <a>; una ruta interna usa <Link> de React Router. */
+/** Ancla (#...), URL externa o mailto/tel usa <a>; una ruta interna usa <Link> de React Router. */
 export default function SmartLink({ href, children, ...rest }: SmartLinkProps) {
-  if (href.startsWith("#") || href.startsWith("http")) {
+  if (href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) {
     return (
       <a href={href} {...rest}>
         {children}
