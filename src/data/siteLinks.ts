@@ -20,7 +20,4 @@ export const siteLinks = {
     portalWeb: "https://profejesus365.github.io/code/",
     gamificacion: "",
   },
-
-  // Hub de recursos digitales educativos (recopilación propia)
-  recursosHub: "https://profejesus365.github.io/web/recursos/index.html",
 };

@@ -40,3 +40,16 @@ export interface SocialLink {
   href: string;
   icon: IconComponent;
 }
+
+export interface DigitalResource {
+  name: string;
+  description: string;
+  url: string;
+}
+
+export interface ResourceCategory {
+  title: string;
+  accent: "amber" | "violet" | "blue" | "emerald" | "rose";
+  icon: LucideIcon;
+  resources: DigitalResource[];
+}
