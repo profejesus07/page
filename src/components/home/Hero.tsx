@@ -84,7 +84,7 @@ export default function Hero() {
             <img
               src={avatar}
               alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-              className="absolute bottom-[10%] left-1/2 h-[58%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
+              className="absolute bottom-0 left-1/2 h-[62%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
               width={480}
               height={600}
               fetchPriority="high"
