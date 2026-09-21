@@ -1,4 +1,3 @@
-import { BookOpen, Gamepad2, MonitorPlay } from "lucide-react";
 import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
@@ -48,63 +47,14 @@ export default function Hero() {
             <div className="absolute -bottom-10 -left-6 h-28 w-28 rounded-full bg-blue-2/40 blur-2xl" />
             <div className="absolute left-1/2 top-[30%] h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-2/30 blur-2xl" />
 
-            <svg
-              className="absolute left-4 top-5 w-16 rotate-[-6deg] opacity-90 sm:left-5 sm:top-6 sm:w-20"
-              viewBox="0 0 120 84"
-              fill="none"
-              aria-hidden="true"
-            >
-              <rect x="1" y="1" width="118" height="82" rx="10" fill="#0D3565" stroke="#FFD42A" strokeWidth="2" />
-              <path
-                d="M16 30 Q30 18 46 28 T80 24"
-                stroke="#FFD42A"
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                opacity="0.85"
-              />
-              <path
-                d="M16 48 Q34 40 52 50 T100 44"
-                stroke="#ffffff"
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                opacity="0.5"
-              />
-              <path
-                d="M16 64 L46 64"
-                stroke="#ffffff"
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                opacity="0.5"
-              />
-            </svg>
-
             <img
               src={avatar}
               alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-              className="absolute bottom-0 left-1/2 h-[94%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
+              className="absolute bottom-0 left-1/2 h-[102%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.35)]"
               width={483}
               height={650}
               fetchPriority="high"
             />
-
-            <div className="absolute right-4 top-[38%] flex w-10 -translate-y-1/2 animate-float items-center justify-center rounded-xl bg-white p-2 shadow-lg sm:right-5 sm:w-11">
-              <BookOpen className="text-blue" size={18} strokeWidth={2.2} />
-            </div>
-            <div
-              className="animate-float-slow absolute left-3 top-[16%] flex w-9 items-center justify-center rounded-xl bg-white p-1.5 shadow-lg sm:w-10"
-              style={{ animationDelay: "1.2s" }}
-            >
-              <Gamepad2 className="text-emerald-500" size={16} strokeWidth={2.2} />
-            </div>
-            <div
-              className="animate-float absolute bottom-[16%] right-3 flex w-9 items-center justify-center rounded-xl bg-white p-1.5 shadow-lg sm:w-10"
-              style={{ animationDelay: "0.6s" }}
-            >
-              <MonitorPlay className="text-violet-500" size={16} strokeWidth={2.2} />
-            </div>
           </div>
         </FadeIn>
       </Container>
