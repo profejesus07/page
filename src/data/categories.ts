@@ -1,15 +1,7 @@
-import { BookOpen, ClipboardCheck, MonitorPlay, Terminal, Users } from "lucide-react";
+import { ClipboardCheck, MonitorPlay, Terminal, Users } from "lucide-react";
 import type { Category } from "../types/content";
 
 export const categories: Category[] = [
-  {
-    slug: "contenidos",
-    title: "Contenidos académicos",
-    description: "Planeaciones, guías, actividades y material para cada área y grado.",
-    icon: BookOpen,
-    accent: "blue",
-    href: "/contenidos",
-  },
   {
     slug: "academia-code",
     title: "Academia C.O.D.E.",

@@ -22,7 +22,7 @@ export default function CategoryCards() {
           <SectionHeading title="¿Qué encontrarás aquí?" subtitle="Herramientas para enseñar y aprender mejor" />
         </FadeIn>
 
-        <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category, index) => {
             const accent = accentStyles[category.accent];
             const Icon = category.icon;
