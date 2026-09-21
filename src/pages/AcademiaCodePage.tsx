@@ -29,7 +29,7 @@ function PortalLink({ label, href, icon: Icon }: PortalLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 rounded-2xl border border-blue-2/30 bg-blue-2/10 px-5 py-4 text-blue-2 transition-colors duration-200 hover:bg-blue-2/20"
+      className="flex items-center gap-3 rounded-2xl border border-accent/30 bg-accent/10 px-5 py-4 text-accent-light transition-colors duration-200 hover:bg-accent/20"
     >
       <Icon size={20} strokeWidth={2.2} />
       <span className="font-semibold">{label}</span>
@@ -41,33 +41,33 @@ export default function AcademiaCodePage() {
   const { academiaCode } = siteLinks;
 
   return (
-    <section className="relative overflow-hidden bg-navy py-20 text-white sm:py-28">
+    <section className="relative overflow-hidden bg-primary py-20 text-white sm:py-28">
       <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
-      <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-blue-2/15 blur-3xl" />
-      <div className="pointer-events-none absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-blue-2/20 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-accent/15 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
 
       <Container className="relative max-w-3xl">
         <FadeIn>
-          <div className="overflow-hidden rounded-2xl border border-white/15 bg-navy-2/60 shadow-2xl">
+          <div className="overflow-hidden rounded-2xl border border-white/15 bg-primary-dark/60 shadow-2xl">
             <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
               <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
               <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
-              <span className="h-2.5 w-2.5 rounded-full bg-blue-2/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
               <span className="ml-3 font-mono text-xs tracking-wide text-white/40">
                 sistema_escolar — consola_de_emergencia
               </span>
             </div>
 
             <div className="flex flex-col gap-7 px-6 py-10 sm:px-10">
-              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-yellow/40 bg-yellow/10 px-4 py-1.5">
-                <AlertTriangle size={15} className="text-yellow" />
-                <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-yellow">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5">
+                <AlertTriangle size={15} className="text-gold" />
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-gold">
                   Transmisión de emergencia
                 </span>
               </div>
 
               <h1 className="text-balance text-3xl font-extrabold leading-tight sm:text-4xl">
-                Academia <span className="text-yellow">C.O.D.E.</span>
+                Academia <span className="text-gold">C.O.D.E.</span>
               </h1>
 
               <div className="flex flex-col gap-5 text-balance leading-relaxed text-white/75">
@@ -88,7 +88,7 @@ export default function AcademiaCodePage() {
               </div>
 
               <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                <ShieldAlert size={22} className="mt-0.5 shrink-0 text-blue-2" />
+                <ShieldAlert size={22} className="mt-0.5 shrink-0 text-accent-light" />
                 <div>
                   <p className="font-mono text-sm font-bold tracking-wide text-white">N.E.U.R.O.N.</p>
                   <p className="mt-1 text-sm text-white/55">

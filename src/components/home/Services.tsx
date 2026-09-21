@@ -9,9 +9,9 @@ import SectionHeading from "../ui/SectionHeading";
 
 export default function Services() {
   return (
-    <section id="servicios" className="relative overflow-hidden bg-navy py-20 sm:py-28">
+    <section id="servicios" className="relative overflow-hidden bg-primary py-20 sm:py-28">
       <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.15] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
-      <div className="pointer-events-none absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-blue-2/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
 
       <Container className="relative flex flex-col items-center gap-12">
         <FadeIn className="flex max-w-2xl flex-col items-center gap-5 text-center">
@@ -33,7 +33,7 @@ export default function Services() {
             return (
               <FadeIn key={service.title} delay={index * 90}>
                 <div className="flex h-full items-start gap-4 rounded-2xl border border-white/12 bg-white/[0.06] p-5 transition-colors duration-300 hover:bg-white/[0.1]">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-2/15 text-blue-2">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-accent/20 text-accent-light">
                     <Icon size={22} strokeWidth={2.2} />
                   </div>
                   <div>

@@ -19,18 +19,18 @@ export default function SectionHeading({
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClasses}`}>
       {eyebrow && (
         <span
-          className={`text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-blue-2" : "text-blue"}`}
+          className={`text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-accent-light" : "text-secondary"}`}
         >
           {eyebrow}
         </span>
       )}
       <h2
-        className={`text-balance text-3xl font-extrabold leading-tight sm:text-4xl ${light ? "text-white" : "text-navy"}`}
+        className={`text-balance text-3xl font-extrabold leading-tight sm:text-4xl ${light ? "text-white" : "text-primary"}`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-balance text-base sm:text-lg ${light ? "text-white/75" : "text-ink"}`}>
+        <p className={`text-balance text-base sm:text-lg ${light ? "text-white/75" : "text-muted"}`}>
           {subtitle}
         </p>
       )}

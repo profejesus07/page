@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-type Variant = "primary" | "secondary" | "ghost-light";
+type Variant = "primary" | "secondary" | "accent" | "gamification" | "ghost-light";
 type Size = "md" | "lg";
 
 interface BaseProps {
@@ -24,8 +24,10 @@ interface ButtonProps extends BaseProps, Omit<ButtonHTMLAttributes<HTMLButtonEle
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-yellow text-navy hover:bg-yellow-2 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)]",
-  secondary: "bg-transparent text-navy border border-navy/25 hover:bg-navy/5",
+    "bg-primary text-white hover:bg-secondary shadow-[0_1px_2px_rgb(0_0_0/0.08)]",
+  secondary: "bg-white text-secondary border border-secondary hover:bg-secondary/5",
+  accent: "bg-accent text-ink hover:bg-accent-light",
+  gamification: "bg-gold text-ink hover:bg-gold-dark",
   "ghost-light": "bg-white/10 text-white border border-white/30 hover:bg-white/20",
 };
 
@@ -35,7 +37,7 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-blue-2 focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-secondary focus-visible:outline-offset-2";
 
 export default function Button({
   children,

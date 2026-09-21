@@ -1,17 +1,42 @@
 @import "tailwindcss";
 
-@theme {
-  /* Paleta oficial: 60% background, 30% primary/secondary, 10% accent */
-  --color-navy: #0f172a; /* primary */
-  --color-navy-2: #1e293b;
-  --color-ink: #334155; /* secondary */
-  --color-yellow: #f59e0b; /* accent (solo CTAs / hovers) */
-  --color-yellow-2: #d97706;
-  --color-blue: #0f766e; /* accent-2 en versión AA para texto sobre claro */
-  --color-blue-2: #14b8a6; /* accent-2 */
-  --color-surface: #f8fafc; /* background */
-  --color-line: #e2e8f0;
+/*
+ * ÚNICA FUENTE DE VERDAD DE LA PALETA.
+ * Cambia estos valores y todo el sitio se actualiza.
+ */
+:root {
+  --color-primary: #123b5d; /* Azul académico: identidad, header, botones */
+  --color-secondary: #176b87; /* Azul petróleo: enlaces, hover, destacados */
+  --color-accent: #2aa198; /* Turquesa: iconos, indicadores, detalles */
+  --color-background: #f8fafc; /* Blanco cálido: fondo general */
+  --color-surface: #ffffff; /* Blanco: tarjetas y paneles */
+  --color-text: #17212b; /* Azul carbón: títulos y texto principal */
+  --color-text-secondary: #64748b; /* Gris azulado: descripciones y metadatos */
+  --color-gamification: #e9b949; /* Dorado suave: logros y gamificación */
 
+  /* Derivados */
+  --color-primary-dark: #0e2f4a;
+  --color-accent-light: #7fd6cd; /* turquesa legible sobre fondos oscuros */
+  --color-gamification-dark: #c99a2e;
+  --color-border: #e2e8f0;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-text);
+  --color-muted: var(--color-text-secondary);
+  --color-gold: var(--color-gamification);
+  --color-gold-dark: var(--color-gamification-dark);
+  --color-line: var(--color-border);
+}
+
+@theme {
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --animate-float: float 6s ease-in-out infinite;
@@ -51,8 +76,8 @@
   body {
     margin: 0;
     font-family: var(--font-sans);
-    color: var(--color-ink);
-    background: var(--color-surface);
+    color: var(--color-text);
+    background: var(--color-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -71,12 +96,12 @@
   }
 
   ::selection {
-    background: var(--color-yellow);
-    color: var(--color-navy);
+    background: var(--color-accent);
+    color: #ffffff;
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-blue-2);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -94,13 +119,13 @@
     right: -2%;
     bottom: -0.12em;
     height: 0.22em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%23F59E0B' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%232AA198' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgba(20, 184, 166, 0.2) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgba(42, 161, 152, 0.18) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
   }
 
