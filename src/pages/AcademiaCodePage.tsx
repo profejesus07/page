@@ -64,7 +64,7 @@ export default function AcademiaCodePage() {
   return (
     <section
       aria-labelledby="academia-title"
-      className="academia-theme relative overflow-hidden bg-[#040a13] py-24 sm:py-28"
+      className="academia-theme relative overflow-clip bg-[#040a13] py-24 sm:py-28"
     >
       {/* Ambientación: scanlines, grid y halos */}
       <div className="scanlines pointer-events-none absolute inset-0 opacity-40" aria-hidden />
