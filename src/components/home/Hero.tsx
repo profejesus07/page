@@ -43,7 +43,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn delay={150} className="relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[16rem] overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-primary-dark shadow-[0_30px_60px_-20px_rgba(15,23,42,0.45)] sm:max-w-xs lg:max-w-sm">
+          <div data-neural-light className="relative mx-auto aspect-[4/5] w-full max-w-[16rem] overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary to-primary-dark shadow-[0_30px_60px_-20px_rgba(15,23,42,0.45)] sm:max-w-xs lg:max-w-sm">
             <div className="bg-dot-grid absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent)]" />
 
             <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-accent/20 blur-2xl" />

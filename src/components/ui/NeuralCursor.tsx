@@ -62,8 +62,18 @@ export default function NeuralCursor() {
       mouse.active = false
     }
 
+    // Zona oscura (marco del avatar): allí los nodos y líneas se aclaran.
+    const darkEl = canvas.parentElement?.querySelector('[data-neural-light]')
+    let dark = { l: 0, t: 0, r: 0, b: 0 }
+    const inDark = (x: number, y: number) => x > dark.l && x < dark.r && y > dark.t && y < dark.b
+
     const frame = () => {
       ctx.clearRect(0, 0, w, h)
+      if (darkEl) {
+        const c = canvas.getBoundingClientRect()
+        const e = darkEl.getBoundingClientRect()
+        dark = { l: e.left - c.left, t: e.top - c.top, r: e.right - c.left, b: e.bottom - c.top }
+      }
 
       for (const n of nodes) {
         n.x += n.vx
@@ -90,7 +100,10 @@ export default function NeuralCursor() {
           const b = nodes[j]
           const d = Math.hypot(a.x - b.x, a.y - b.y)
           if (d < LINK_DIST) {
-            ctx.strokeStyle = `rgba(37, 99, 235, ${(1 - d / LINK_DIST) * 0.16})`
+            const k = 1 - d / LINK_DIST
+            ctx.strokeStyle = inDark((a.x + b.x) / 2, (a.y + b.y) / 2)
+              ? `rgba(147, 197, 253, ${k * 0.45})`
+              : `rgba(37, 99, 235, ${k * 0.16})`
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -100,14 +113,17 @@ export default function NeuralCursor() {
         if (mouse.active) {
           const d = Math.hypot(a.x - mouse.x, a.y - mouse.y)
           if (d < MOUSE_DIST) {
-            ctx.strokeStyle = `rgba(16, 185, 129, ${(1 - d / MOUSE_DIST) * 0.55})`
+            const k = 1 - d / MOUSE_DIST
+            ctx.strokeStyle = inDark(a.x, a.y)
+              ? `rgba(110, 231, 183, ${k * 0.8})`
+              : `rgba(16, 185, 129, ${k * 0.55})`
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(mouse.x, mouse.y)
             ctx.stroke()
           }
         }
-        ctx.fillStyle = 'rgba(37, 99, 235, 0.35)'
+        ctx.fillStyle = inDark(a.x, a.y) ? 'rgba(191, 219, 254, 0.75)' : 'rgba(37, 99, 235, 0.35)'
         ctx.beginPath()
         ctx.arc(a.x, a.y, 1.6, 0, Math.PI * 2)
         ctx.fill()
