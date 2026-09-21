@@ -55,7 +55,7 @@ export default function Header() {
         scrolled ? "border-transparent shadow-[0_4px_20px_-8px_rgba(15,23,42,0.35)]" : "border-white/10"
       }`}
     >
-      <Container className="flex items-center justify-between gap-4 py-2.5">
+      <Container className="relative z-40 flex items-center justify-between gap-4 py-2.5">
         <Link to="/" className="flex shrink-0 items-center gap-3" onClick={() => setMenuOpen(false)}>
           <img
             src={avatar}
@@ -133,7 +133,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-muted transition-colors hover:bg-background hover:text-primary"
+              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-ink transition-colors hover:bg-background hover:text-secondary"
             >
               {link.label}
             </SmartLink>
