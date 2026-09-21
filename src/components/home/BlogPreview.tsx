@@ -26,7 +26,7 @@ export default function BlogPreview() {
                   className="group flex h-full flex-col gap-4 rounded-xl border border-line bg-white p-6 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_-14px_rgba(15,23,42,0.25)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-accent/15 px-3 py-1 text-xs font-bold text-secondary">
+                    <span className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-bold text-secondary">
                       {post.category}
                     </span>
                     <div className="grid h-9 w-9 place-items-center rounded-lg bg-background text-primary">

@@ -51,7 +51,7 @@ export default function Services() {
             ¿Quieres conocer más? Escríbeme
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button href={contactInfo.whatsappHref} size="lg" icon={<WhatsAppIcon size={18} />}>
+            <Button href={contactInfo.whatsappHref} size="lg" variant="accent" icon={<WhatsAppIcon size={18} />}>
               WhatsApp
             </Button>
             <Button

@@ -7,11 +7,11 @@ import { resourceCategories } from "../data/resources";
 import type { ResourceCategory } from "../types/content";
 
 const accentStyles: Record<ResourceCategory["accent"], { badge: string; text: string; border: string }> = {
-  amber: { badge: "bg-gold/25 text-primary", text: "text-secondary", border: "hover:border-gold" },
-  violet: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  blue: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  emerald: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  rose: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
+  amber: { badge: "bg-accent/15 text-accent-dark", text: "text-accent-dark", border: "hover:border-accent" },
+  violet: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  blue: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  emerald: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  rose: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
 };
 
 const totalRecursos = resourceCategories.reduce((sum, category) => sum + category.resources.length, 0);

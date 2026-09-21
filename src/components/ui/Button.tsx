@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-type Variant = "primary" | "secondary" | "accent" | "gamification" | "ghost-light";
+type Variant = "primary" | "secondary" | "accent" | "creative" | "ghost-light";
 type Size = "md" | "lg";
 
 interface BaseProps {
@@ -25,9 +25,9 @@ interface ButtonProps extends BaseProps, Omit<ButtonHTMLAttributes<HTMLButtonEle
 const variantClasses: Record<Variant, string> = {
   primary:
     "bg-primary text-white hover:bg-secondary shadow-[0_1px_2px_rgb(0_0_0/0.08)]",
-  secondary: "bg-white text-secondary border border-secondary hover:bg-secondary/5",
-  accent: "bg-accent text-ink hover:bg-accent-light",
-  gamification: "bg-gold text-ink hover:bg-gold-dark",
+  secondary: "bg-white text-secondary border border-secondary hover:bg-secondary hover:text-white",
+  accent: "bg-accent text-primary hover:bg-accent-dark hover:text-white",
+  creative: "bg-creative text-primary hover:bg-creative-dark hover:text-white",
   "ghost-light": "bg-white/10 text-white border border-white/30 hover:bg-white/20",
 };
 

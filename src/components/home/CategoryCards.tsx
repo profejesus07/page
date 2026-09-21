@@ -7,11 +7,11 @@ import SectionHeading from "../ui/SectionHeading";
 import SmartLink from "../ui/SmartLink";
 
 const accentStyles: Record<Category["accent"], { badge: string; text: string; border: string }> = {
-  blue: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  green: { badge: "bg-gold/25 text-primary", text: "text-secondary", border: "hover:border-gold" },
-  purple: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  yellow: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
-  rose: { badge: "bg-accent/10 text-accent", text: "text-secondary", border: "hover:border-accent/50" },
+  blue: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  green: { badge: "bg-accent/15 text-accent-dark", text: "text-accent-dark", border: "hover:border-accent" },
+  purple: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  yellow: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+  rose: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
 };
 
 export default function CategoryCards() {

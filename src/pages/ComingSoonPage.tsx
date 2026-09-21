@@ -16,7 +16,7 @@ export default function ComingSoonPage({ title, description, icon: Icon = Sparkl
           <div className="grid h-16 w-16 place-items-center rounded-2xl bg-secondary/10 text-secondary">
             <Icon size={30} strokeWidth={2.2} />
           </div>
-          <span className="rounded-full bg-accent/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-secondary">
+          <span className="rounded-full bg-creative/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-creative-dark">
             Próximamente
           </span>
           <h1 className="text-3xl font-extrabold text-primary">{title}</h1>

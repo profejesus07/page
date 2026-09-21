@@ -4,20 +4,22 @@
  * ÚNICA FUENTE DE VERDAD DE LA PALETA.
  * Cambia estos valores y todo el sitio se actualiza.
  */
+/* Se cambia solo aquí: el resto del sitio usa estas variables. */
 :root {
-  --color-primary: #123b5d; /* Azul académico: identidad, header, botones */
-  --color-secondary: #176b87; /* Azul petróleo: enlaces, hover, destacados */
-  --color-accent: #2aa198; /* Turquesa: iconos, indicadores, detalles */
-  --color-background: #f8fafc; /* Blanco cálido: fondo general */
-  --color-surface: #ffffff; /* Blanco: tarjetas y paneles */
-  --color-text: #17212b; /* Azul carbón: títulos y texto principal */
-  --color-text-secondary: #64748b; /* Gris azulado: descripciones y metadatos */
-  --color-gamification: #e9b949; /* Dorado suave: logros y gamificación */
+  --color-primary: #0f2742; /* Azul noche: identidad, header, footer, títulos */
+  --color-secondary: #2563eb; /* Azul tecnológico: enlaces, interacción, hover */
+  --color-accent: #10b981; /* Verde esmeralda: gamificación, progreso, éxito */
+  --color-creative: #f97316; /* Coral: novedades y etiquetas (uso muy moderado) */
+  --color-background: #f8fafc; /* Fondo general */
+  --color-surface: #ffffff; /* Tarjetas y paneles */
+  --color-text: #1e293b; /* Texto principal */
+  --color-text-secondary: #64748b; /* Texto secundario */
 
-  /* Derivados */
-  --color-primary-dark: #0e2f4a;
-  --color-accent-light: #7fd6cd; /* turquesa legible sobre fondos oscuros */
-  --color-gamification-dark: #c99a2e;
+  /* Derivados (mantienen contraste AA) */
+  --color-primary-dark: #0a1c31;
+  --color-accent-dark: #047857; /* verde legible sobre fondos claros */
+  --color-accent-light: #6ee7b7; /* verde legible sobre fondos oscuros */
+  --color-creative-dark: #c2410c; /* coral legible como texto sobre claro */
   --color-border: #e2e8f0;
 }
 
@@ -31,8 +33,9 @@
   --color-surface: var(--color-surface);
   --color-ink: var(--color-text);
   --color-muted: var(--color-text-secondary);
-  --color-gold: var(--color-gamification);
-  --color-gold-dark: var(--color-gamification-dark);
+  --color-creative: var(--color-creative);
+  --color-creative-dark: var(--color-creative-dark);
+  --color-accent-dark: var(--color-accent-dark);
   --color-line: var(--color-border);
 }
 
@@ -97,11 +100,11 @@
 
   ::selection {
     background: var(--color-accent);
-    color: #ffffff;
+    color: var(--color-primary);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -119,13 +122,13 @@
     right: -2%;
     bottom: -0.12em;
     height: 0.22em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%232AA198' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%2310B981' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgba(42, 161, 152, 0.18) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.14) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
   }
 

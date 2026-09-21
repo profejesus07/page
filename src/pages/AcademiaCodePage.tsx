@@ -59,15 +59,15 @@ export default function AcademiaCodePage() {
             </div>
 
             <div className="flex flex-col gap-7 px-6 py-10 sm:px-10">
-              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5">
-                <AlertTriangle size={15} className="text-gold" />
-                <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-gold">
+              <div className="inline-flex w-fit items-center gap-2 rounded-full border border-creative/40 bg-creative/10 px-4 py-1.5">
+                <AlertTriangle size={15} className="text-creative" />
+                <span className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-creative">
                   Transmisión de emergencia
                 </span>
               </div>
 
               <h1 className="text-balance text-3xl font-extrabold leading-tight sm:text-4xl">
-                Academia <span className="text-gold">C.O.D.E.</span>
+                Academia <span className="text-accent-light">C.O.D.E.</span>
               </h1>
 
               <div className="flex flex-col gap-5 text-balance leading-relaxed text-white/75">
