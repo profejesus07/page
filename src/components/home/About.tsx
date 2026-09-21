@@ -4,9 +4,9 @@ import FadeIn from "../ui/FadeIn";
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="bg-white py-20 sm:py-24">
+    <section id="sobre-mi" className="bg-surface py-20 sm:py-24">
       <Container>
-        <FadeIn className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-3xl border border-navy/8 bg-surface px-6 py-12 text-center sm:px-14">
+        <FadeIn className="mx-auto flex max-w-3xl flex-col items-center gap-6 rounded-xl border border-line bg-white shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] px-6 py-12 text-center sm:px-14">
           <img
             src={avatar}
             alt="Retrato de Jesús Álvarez"

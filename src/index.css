@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #09264a;
-  --color-navy-2: #0d3565;
-  --color-blue: #1769d1;
-  --color-blue-2: #4d94f0;
-  --color-yellow: #ffd42a;
-  --color-yellow-2: #e6b800;
-  --color-surface: #f5f7fa;
-  --color-ink: #14213d;
+  /* Paleta oficial: 60% background, 30% primary/secondary, 10% accent */
+  --color-navy: #0f172a; /* primary */
+  --color-navy-2: #1e293b;
+  --color-ink: #334155; /* secondary */
+  --color-yellow: #f59e0b; /* accent (solo CTAs / hovers) */
+  --color-yellow-2: #d97706;
+  --color-blue: #0f766e; /* accent-2 en versión AA para texto sobre claro */
+  --color-blue-2: #14b8a6; /* accent-2 */
+  --color-surface: #f8fafc; /* background */
+  --color-line: #e2e8f0;
 
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -50,11 +52,18 @@
     margin: 0;
     font-family: var(--font-sans);
     color: var(--color-ink);
-    background: #ffffff;
+    background: var(--color-surface);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
   }
 
   section[id] {
@@ -67,7 +76,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-blue);
+    outline: 2px solid var(--color-blue-2);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -85,13 +94,13 @@
     right: -2%;
     bottom: -0.12em;
     height: 0.22em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%23FFD42A' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%23F59E0B' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 100% 100%;
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgba(23, 105, 209, 0.18) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgba(20, 184, 166, 0.2) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
   }
 

@@ -7,11 +7,11 @@ import { resourceCategories } from "../data/resources";
 import type { ResourceCategory } from "../types/content";
 
 const accentStyles: Record<ResourceCategory["accent"], { badge: string; text: string; border: string }> = {
-  amber: { badge: "bg-amber-500", text: "text-amber-600", border: "hover:border-amber-400/40" },
-  violet: { badge: "bg-violet-500", text: "text-violet-600", border: "hover:border-violet-400/40" },
-  blue: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue/40" },
-  emerald: { badge: "bg-emerald-500", text: "text-emerald-600", border: "hover:border-emerald-400/40" },
-  rose: { badge: "bg-rose-500", text: "text-rose-600", border: "hover:border-rose-400/40" },
+  amber: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue-2/50" },
+  violet: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue-2/50" },
+  blue: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue-2/50" },
+  emerald: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue-2/50" },
+  rose: { badge: "bg-blue", text: "text-blue", border: "hover:border-blue-2/50" },
 };
 
 const totalRecursos = resourceCategories.reduce((sum, category) => sum + category.resources.length, 0);
@@ -23,11 +23,11 @@ export default function RecursosPage() {
 
       <Container className="relative flex flex-col items-center gap-14">
         <FadeIn className="flex max-w-2xl flex-col items-center gap-5 text-center">
-          <span className="rounded-full bg-violet-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-violet-600">
+          <span className="rounded-full bg-blue/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-blue">
             Recursos digitales
           </span>
           <SectionHeading title="Materiales interactivos para aprender jugando" />
-          <p className="text-balance text-base leading-relaxed text-ink/65 sm:text-lg">
+          <p className="text-balance text-base leading-relaxed text-ink sm:text-lg">
             Una recopilación propia de {totalRecursos} herramientas educativas gratuitas, organizadas
             en {resourceCategories.length} categorías. Cada una abre en una pestaña nueva y
             pertenece a su respectivo autor.
@@ -47,7 +47,7 @@ export default function RecursosPage() {
                       <CategoryIcon size={19} strokeWidth={2.2} />
                     </div>
                     <h2 className="text-lg font-bold text-navy sm:text-xl">{category.title}</h2>
-                    <span className="rounded-full bg-white px-2.5 py-0.5 text-xs font-bold text-ink/50 shadow-sm">
+                    <span className="rounded-full bg-white px-2.5 py-0.5 text-xs font-bold text-ink shadow-sm">
                       {category.resources.length}
                     </span>
                   </div>
@@ -59,7 +59,7 @@ export default function RecursosPage() {
                         href={resource.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`group flex flex-col gap-2 rounded-2xl border border-navy/8 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(9,38,74,0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_28px_-14px_rgba(9,38,74,0.22)] ${accent.border}`}
+                        className={`group flex flex-col gap-2 rounded-xl border border-line bg-white p-5 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_28px_-14px_rgba(9,38,74,0.22)] ${accent.border}`}
                       >
                         <div className="flex items-center justify-between gap-2">
                           <h3 className="font-bold text-navy">{resource.name}</h3>
@@ -68,7 +68,7 @@ export default function RecursosPage() {
                             className={`shrink-0 opacity-40 transition-opacity group-hover:opacity-100 ${accent.text}`}
                           />
                         </div>
-                        <p className="text-sm leading-relaxed text-ink/65">{resource.description}</p>
+                        <p className="text-sm leading-relaxed text-ink">{resource.description}</p>
                       </a>
                     ))}
                   </div>

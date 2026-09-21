@@ -23,10 +23,10 @@ export default function BlogPreview() {
               <FadeIn key={post.slug} delay={index * 90}>
                 <Link
                   to="/blog"
-                  className="group flex h-full flex-col gap-4 rounded-2xl border border-navy/8 bg-white p-6 shadow-[0_2px_10px_-4px_rgba(9,38,74,0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_-14px_rgba(9,38,74,0.25)]"
+                  className="group flex h-full flex-col gap-4 rounded-xl border border-line bg-white p-6 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_-14px_rgba(15,23,42,0.25)]"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-blue/10 px-3 py-1 text-xs font-bold text-blue">
+                    <span className="rounded-full bg-blue-2/15 px-3 py-1 text-xs font-bold text-blue">
                       {post.category}
                     </span>
                     <div className="grid h-9 w-9 place-items-center rounded-lg bg-surface text-navy">
@@ -35,9 +35,9 @@ export default function BlogPreview() {
                   </div>
 
                   <h3 className="text-lg font-bold leading-snug text-navy">{post.title}</h3>
-                  <p className="flex-1 text-sm leading-relaxed text-ink/65">{post.excerpt}</p>
+                  <p className="flex-1 text-sm leading-relaxed text-ink">{post.excerpt}</p>
 
-                  <div className="flex items-center justify-between border-t border-navy/8 pt-4 text-xs font-medium text-ink/55">
+                  <div className="flex items-center justify-between border-t border-navy/8 pt-4 text-xs font-medium text-ink">
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar size={14} />
                       {dateFormatter.format(new Date(post.date))}

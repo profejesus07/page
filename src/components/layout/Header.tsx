@@ -51,8 +51,8 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b bg-white/90 backdrop-blur transition-shadow duration-300 ${
-        scrolled ? "border-transparent shadow-[0_4px_20px_-8px_rgba(9,38,74,0.18)]" : "border-navy/5"
+      className={`sticky top-0 z-50 border-b bg-navy/95 text-surface backdrop-blur transition-shadow duration-300 ${
+        scrolled ? "border-transparent shadow-[0_4px_20px_-8px_rgba(15,23,42,0.35)]" : "border-white/10"
       }`}
     >
       <Container className="flex items-center justify-between gap-4 py-2.5">
@@ -62,12 +62,12 @@ export default function Header() {
             alt="Avatar de Profe Jesús Álvarez"
             width={44}
             height={44}
-            className="h-11 w-11 rounded-full border-2 border-yellow object-cover object-top"
+            className="h-11 w-11 rounded-full border-2 border-blue-2 object-cover object-top"
           />
           <span className="flex flex-col leading-tight">
-            <span className="text-sm font-medium text-ink/70">Profe</span>
-            <span className="text-base font-extrabold text-navy">Jesús Álvarez</span>
-            <span className="hidden text-[11px] font-medium tracking-wide text-blue sm:block">
+            <span className="text-sm font-medium text-surface/70">Profe</span>
+            <span className="text-base font-extrabold text-surface">Jesús Álvarez</span>
+            <span className="hidden text-[11px] font-medium tracking-wide text-blue-2 sm:block">
               Educación • Gamificación • Tecnología
             </span>
           </span>
@@ -80,7 +80,7 @@ export default function Header() {
                 autoFocus
                 type="search"
                 placeholder="Buscar contenidos..."
-                className="mr-1 w-44 rounded-full border border-navy/15 bg-surface px-4 py-2 text-sm text-ink outline-none focus-visible:border-blue lg:w-56"
+                className="mr-1 w-44 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-surface placeholder:text-white/50 outline-none focus-visible:border-blue-2 lg:w-56"
                 onBlur={() => setSearchOpen(false)}
               />
             )}
@@ -88,7 +88,7 @@ export default function Header() {
               type="button"
               aria-label={searchOpen ? "Cerrar búsqueda" : "Buscar"}
               onClick={() => setSearchOpen((v) => !v)}
-              className="grid h-10 w-10 place-items-center rounded-full text-navy transition-colors hover:bg-surface"
+              className="grid h-10 w-10 place-items-center rounded-full text-surface transition-colors hover:bg-white/10"
             >
               <Search size={19} />
             </button>
@@ -106,7 +106,7 @@ export default function Header() {
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full text-navy transition-colors hover:bg-surface"
+            className="grid h-10 w-10 place-items-center rounded-full text-surface transition-colors hover:bg-white/10"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -123,7 +123,7 @@ export default function Header() {
 
       <div
         ref={menuPanelRef}
-        className={`absolute right-3 top-full z-40 mt-2 w-[calc(100vw-1.5rem)] max-w-sm origin-top-right overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-2xl transition-all duration-200 ease-out sm:right-4 ${
+        className={`absolute right-3 top-full z-40 mt-2 w-[calc(100vw-1.5rem)] max-w-sm origin-top-right overflow-hidden rounded-xl border border-line bg-white shadow-[0_10px_15px_-3px_rgb(0_0_0/0.15)] transition-all duration-200 ease-out sm:right-4 ${
           menuOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         }`}
       >
@@ -133,16 +133,16 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-ink/80 transition-colors hover:bg-surface hover:text-blue"
+              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-ink transition-colors hover:bg-surface hover:text-navy"
             >
               {link.label}
             </SmartLink>
           ))}
-          <div className="mt-2 flex flex-col gap-2.5 border-t border-navy/8 pt-3">
+          <div className="mt-2 flex flex-col gap-2.5 border-t border-line pt-3">
             <input
               type="search"
               placeholder="Buscar contenidos..."
-              className="w-full rounded-full border border-navy/15 bg-surface px-4 py-2.5 text-sm text-ink outline-none focus-visible:border-blue"
+              className="w-full rounded-full border border-line bg-surface px-4 py-2.5 text-sm text-ink outline-none focus-visible:border-blue-2"
             />
             <Button href="#examenes" size="md" className="w-full">
               Entrar a exámenes

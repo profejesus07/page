@@ -33,7 +33,7 @@ export default function Services() {
             return (
               <FadeIn key={service.title} delay={index * 90}>
                 <div className="flex h-full items-start gap-4 rounded-2xl border border-white/12 bg-white/[0.06] p-5 transition-colors duration-300 hover:bg-white/[0.1]">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-yellow/15 text-yellow">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-blue-2/15 text-blue-2">
                     <Icon size={22} strokeWidth={2.2} />
                   </div>
                   <div>

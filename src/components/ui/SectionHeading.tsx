@@ -19,7 +19,7 @@ export default function SectionHeading({
     <div className={`flex max-w-2xl flex-col gap-3 ${alignClasses}`}>
       {eyebrow && (
         <span
-          className={`text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-yellow" : "text-blue"}`}
+          className={`text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-blue-2" : "text-blue"}`}
         >
           {eyebrow}
         </span>
@@ -30,7 +30,7 @@ export default function SectionHeading({
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-balance text-base sm:text-lg ${light ? "text-white/75" : "text-ink/65"}`}>
+        <p className={`text-balance text-base sm:text-lg ${light ? "text-white/75" : "text-ink"}`}>
           {subtitle}
         </p>
       )}

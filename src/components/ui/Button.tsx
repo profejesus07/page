@@ -24,7 +24,7 @@ interface ButtonProps extends BaseProps, Omit<ButtonHTMLAttributes<HTMLButtonEle
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-yellow text-navy hover:bg-yellow-2 shadow-[0_10px_24px_-10px_rgba(255,212,42,0.7)]",
+    "bg-yellow text-navy hover:bg-yellow-2 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)]",
   secondary: "bg-transparent text-navy border border-navy/25 hover:bg-navy/5",
   "ghost-light": "bg-white/10 text-white border border-white/30 hover:bg-white/20",
 };
@@ -35,7 +35,7 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-blue focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-200 ease-out hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-blue-2 focus-visible:outline-offset-2";
 
 export default function Button({
   children,

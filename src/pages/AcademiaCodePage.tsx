@@ -29,7 +29,7 @@ function PortalLink({ label, href, icon: Icon }: PortalLinkProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-3 rounded-2xl border border-yellow/30 bg-yellow/10 px-5 py-4 text-yellow transition-colors duration-200 hover:bg-yellow/20"
+      className="flex items-center gap-3 rounded-2xl border border-blue-2/30 bg-blue-2/10 px-5 py-4 text-blue-2 transition-colors duration-200 hover:bg-blue-2/20"
     >
       <Icon size={20} strokeWidth={2.2} />
       <span className="font-semibold">{label}</span>
@@ -43,16 +43,16 @@ export default function AcademiaCodePage() {
   return (
     <section className="relative overflow-hidden bg-navy py-20 text-white sm:py-28">
       <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.12] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
-      <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-emerald-500/15 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 top-10 h-72 w-72 rounded-full bg-blue-2/15 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-blue-2/20 blur-3xl" />
 
       <Container className="relative max-w-3xl">
         <FadeIn>
-          <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/30 shadow-2xl">
+          <div className="overflow-hidden rounded-2xl border border-white/15 bg-navy-2/60 shadow-2xl">
             <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-yellow/70" />
-              <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+              <span className="h-2.5 w-2.5 rounded-full bg-white/25" />
+              <span className="h-2.5 w-2.5 rounded-full bg-blue-2/70" />
               <span className="ml-3 font-mono text-xs tracking-wide text-white/40">
                 sistema_escolar — consola_de_emergencia
               </span>
@@ -88,7 +88,7 @@ export default function AcademiaCodePage() {
               </div>
 
               <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4">
-                <ShieldAlert size={22} className="mt-0.5 shrink-0 text-emerald-400" />
+                <ShieldAlert size={22} className="mt-0.5 shrink-0 text-blue-2" />
                 <div>
                   <p className="font-mono text-sm font-bold tracking-wide text-white">N.E.U.R.O.N.</p>
                   <p className="mt-1 text-sm text-white/55">
