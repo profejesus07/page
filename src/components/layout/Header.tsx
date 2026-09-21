@@ -90,30 +90,40 @@ export default function Header() {
       </Container>
 
       <div
-        className={`absolute inset-x-0 top-full z-40 max-h-[75vh] origin-top overflow-y-auto border-t border-navy/10 bg-white shadow-lg transition-all duration-200 ease-out ${
-          menuOpen ? "scale-y-100 opacity-100" : "pointer-events-none scale-y-95 opacity-0"
+        aria-hidden="true"
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 z-30 bg-navy/25 backdrop-blur-[2px] transition-opacity duration-200 ${
+          menuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
+
+      <div
+        className={`absolute right-3 top-full z-40 mt-2 w-[calc(100vw-1.5rem)] max-w-sm origin-top-right overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-2xl transition-all duration-200 ease-out sm:right-4 ${
+          menuOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         }`}
       >
-        <Container className="flex flex-col gap-1 py-4">
+        <div className="flex max-h-[75vh] flex-col gap-1 overflow-y-auto p-3">
           {navLinks.map((link) => (
             <SmartLink
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="rounded-lg px-3 py-2.5 text-base font-semibold text-ink/80 transition-colors hover:bg-surface hover:text-blue"
+              className="rounded-xl px-3.5 py-2.5 text-base font-semibold text-ink/80 transition-colors hover:bg-surface hover:text-blue"
             >
               {link.label}
             </SmartLink>
           ))}
-          <input
-            type="search"
-            placeholder="Buscar contenidos..."
-            className="mt-2 w-full rounded-full border border-navy/15 bg-surface px-4 py-2.5 text-sm text-ink outline-none focus-visible:border-blue"
-          />
-          <Button href="#examenes" size="md" className="mt-3 w-full">
-            Entrar a exámenes
-          </Button>
-        </Container>
+          <div className="mt-2 flex flex-col gap-2.5 border-t border-navy/8 pt-3">
+            <input
+              type="search"
+              placeholder="Buscar contenidos..."
+              className="w-full rounded-full border border-navy/15 bg-surface px-4 py-2.5 text-sm text-ink outline-none focus-visible:border-blue"
+            />
+            <Button href="#examenes" size="md" className="w-full">
+              Entrar a exámenes
+            </Button>
+          </div>
+        </div>
       </div>
     </header>
   );
