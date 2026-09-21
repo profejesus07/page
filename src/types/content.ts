@@ -51,3 +51,19 @@ export interface ResourceCategory {
   icon: LucideIcon;
   resources: DigitalResource[];
 }
+
+/** Fase narrativa de Academia C.O.D.E. */
+export interface MissionPhase {
+  id: string;
+  index: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: LucideIcon;
+  /** Estado que NEURON muestra mientras esta fase está activa. */
+  neuron: {
+    status: string;
+    control: number; // 0–100 nivel de control cognitivo (ambientación)
+    lines: string[];
+  };
+}
