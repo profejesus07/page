@@ -50,24 +50,6 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          {navLinks
-            .filter((link) => link.primary)
-            .map((link) => (
-              <SmartLink
-                key={link.href}
-                href={link.href}
-                className={
-                  link.href === "#inicio"
-                    ? "rounded-full bg-yellow px-4 py-1.5 text-sm font-bold text-navy transition-colors"
-                    : "text-sm font-semibold text-ink/70 transition-colors hover:text-blue"
-                }
-              >
-                {link.label}
-              </SmartLink>
-            ))}
-        </nav>
-
         <div className="flex items-center gap-2">
           <div className="hidden items-center sm:flex">
             {searchOpen && (
@@ -89,7 +71,7 @@ export default function Header() {
             </button>
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden sm:block">
             <Button href="#examenes" size="md">
               Entrar a exámenes
             </Button>
@@ -100,7 +82,7 @@ export default function Header() {
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full text-navy transition-colors hover:bg-surface lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full text-navy transition-colors hover:bg-surface"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -108,7 +90,7 @@ export default function Header() {
       </Container>
 
       <div
-        className={`absolute inset-x-0 top-full z-40 max-h-[75vh] origin-top overflow-y-auto border-t border-navy/10 bg-white shadow-lg transition-all duration-200 ease-out lg:hidden ${
+        className={`absolute inset-x-0 top-full z-40 max-h-[75vh] origin-top overflow-y-auto border-t border-navy/10 bg-white shadow-lg transition-all duration-200 ease-out ${
           menuOpen ? "scale-y-100 opacity-100" : "pointer-events-none scale-y-95 opacity-0"
         }`}
       >

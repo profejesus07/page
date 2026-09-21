@@ -30,7 +30,15 @@ export default function SmartLink({ href, children, ...rest }: SmartLinkProps) {
     );
   }
 
-  if (href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+  if (href.startsWith("http")) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...rest}>
+        {children}
+      </a>
+    );
+  }
+
+  if (href.startsWith("mailto:") || href.startsWith("tel:")) {
     return (
       <a href={href} {...rest}>
         {children}
