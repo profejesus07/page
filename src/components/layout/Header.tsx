@@ -95,8 +95,8 @@ export default function Header() {
           </div>
 
           <div className="hidden sm:block">
-            <Button href="#examenes" size="md" variant="accent">
-              Entrar a exámenes
+            <Button href="/academia-code" size="md" variant="accent">
+              Academia Code
             </Button>
           </div>
 
@@ -144,8 +144,8 @@ export default function Header() {
               placeholder="Buscar contenidos..."
               className="w-full rounded-full border border-line bg-background px-4 py-2.5 text-sm text-muted outline-none focus-visible:border-accent"
             />
-            <Button href="#examenes" size="md" className="w-full">
-              Entrar a exámenes
+            <Button href="/academia-code" size="md" className="w-full">
+              Academia Code
             </Button>
           </div>
         </div>
