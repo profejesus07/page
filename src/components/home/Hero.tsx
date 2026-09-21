@@ -2,11 +2,14 @@ import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
+import NeuralCursor from "../ui/NeuralCursor";
 
 export default function Hero() {
   return (
     <section id="inicio" className="relative overflow-hidden bg-background pb-20 pt-14 sm:pt-20 lg:pb-28 lg:pt-24">
       <div className="bg-dot-grid pointer-events-none absolute inset-0 -z-10 opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]" />
+
+      <NeuralCursor />
 
       <Container className="grid items-center gap-14 lg:grid-cols-[45%_55%] lg:gap-10">
         <FadeIn className="flex flex-col items-start gap-6">
