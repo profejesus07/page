@@ -1,5 +1,5 @@
 import { Menu, Search, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import { navLinks } from "../../data/navigation";
@@ -11,6 +11,8 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const menuPanelRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -23,6 +25,27 @@ export default function Header() {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const closeIfOutside = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (menuPanelRef.current?.contains(target) || menuButtonRef.current?.contains(target)) return;
+      setMenuOpen(false);
+    };
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("pointerdown", closeIfOutside);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeIfOutside);
+      document.removeEventListener("keydown", closeOnEscape);
     };
   }, [menuOpen]);
 
@@ -78,6 +101,7 @@ export default function Header() {
           </div>
 
           <button
+            ref={menuButtonRef}
             type="button"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
@@ -98,6 +122,7 @@ export default function Header() {
       />
 
       <div
+        ref={menuPanelRef}
         className={`absolute right-3 top-full z-40 mt-2 w-[calc(100vw-1.5rem)] max-w-sm origin-top-right overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-2xl transition-all duration-200 ease-out sm:right-4 ${
           menuOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         }`}
