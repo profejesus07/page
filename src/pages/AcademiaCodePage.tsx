@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { motion } from "framer-motion";
-import { Gamepad2, Globe, GraduationCap, Play, ShieldCheck } from "lucide-react";
+import { Play, ShieldCheck, Terminal } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { CodeTerminal } from "../components/academia/CodeTerminal";
 import { MissionTimeline } from "../components/academia/MissionTimeline";
@@ -150,13 +150,11 @@ export default function AcademiaCodePage() {
           </div>
         </div>
 
-        {/* Portales de acceso */}
+        {/* Portal de acceso */}
         <div className="mt-24 flex flex-col items-center gap-5">
-          <p className="text-sm font-bold uppercase tracking-wide text-white/50">Portales de acceso</p>
-          <div className="grid w-full gap-3 sm:grid-cols-3">
-            <PortalLink label="Portal estudiante" href={academiaCode.portalEstudiante} icon={GraduationCap} />
-            <PortalLink label="Portal web" href={academiaCode.portalWeb} icon={Globe} />
-            <PortalLink label="Gamificación" href={academiaCode.gamificacion} icon={Gamepad2} />
+          <p className="text-sm font-bold uppercase tracking-wide text-white/50">Portal de acceso</p>
+          <div className="w-full max-w-sm">
+            <PortalLink label="Portal del Hacker" href={academiaCode.portalHacker} icon={Terminal} />
           </div>
           <Button href="/" variant="ghost-light" className="mt-4">
             Volver al inicio

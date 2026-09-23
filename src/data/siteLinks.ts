@@ -16,8 +16,6 @@ export const siteLinks = {
 
   // Portales del proyecto Academia C.O.D.E.
   academiaCode: {
-    portalEstudiante: "http://192.168.1.4:5174/",
-    portalWeb: "https://profejesus07.github.io/code/",
-    gamificacion: "",
+    portalHacker: "https://academiacode07.vercel.app/login",
   },
 };
