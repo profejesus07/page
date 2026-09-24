@@ -24,11 +24,12 @@ interface ButtonProps extends BaseProps, Omit<ButtonHTMLAttributes<HTMLButtonEle
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-primary text-white hover:bg-secondary shadow-[0_1px_2px_rgb(0_0_0/0.08)]",
-  secondary: "bg-white text-secondary border border-secondary hover:bg-secondary hover:text-white",
-  accent: "bg-accent text-primary hover:bg-accent-dark hover:text-white",
-  creative: "bg-creative text-primary hover:bg-creative-dark hover:text-white",
-  "ghost-light": "bg-white/10 text-white border border-white/30 hover:bg-white/20",
+    "bg-secondary text-white hover:bg-violet-500 shadow-[inset_0_1px_0_rgb(255_255_255/0.2),0_8px_30px_-10px_rgb(139_92_246/0.8)] hover:shadow-[inset_0_1px_0_rgb(255_255_255/0.25),0_10px_40px_-8px_rgb(139_92_246/0.9)]",
+  secondary:
+    "bg-white/[0.04] text-ink border border-white/10 hover:bg-white/[0.08] hover:border-white/20",
+  accent: "bg-accent text-background hover:bg-accent-light shadow-[0_8px_30px_-12px_rgb(16_185_129/0.8)]",
+  creative: "bg-creative text-background hover:bg-orange-400",
+  "ghost-light": "bg-white/[0.04] text-white border border-white/10 hover:bg-white/[0.08] hover:border-white/20",
 };
 
 const sizeClasses: Record<Size, string> = {

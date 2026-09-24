@@ -23,21 +23,22 @@ export default function BlogPreview() {
               <FadeIn key={post.slug} delay={index * 90}>
                 <Link
                   to="/blog"
-                  className="group flex h-full flex-col gap-4 rounded-xl border border-line bg-white p-6 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_-14px_rgba(15,23,42,0.25)]"
+                  data-spotlight
+                  className="spotlight-card group flex h-full flex-col gap-4 rounded-2xl border border-line bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-bold text-secondary">
+                    <span className="rounded-full border border-secondary/30 bg-secondary/15 px-3 py-1 text-xs font-bold text-secondary-light">
                       {post.category}
                     </span>
-                    <div className="grid h-9 w-9 place-items-center rounded-lg bg-background text-primary">
+                    <div className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-white/[0.04] text-ink">
                       <Icon size={18} strokeWidth={2.2} />
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold leading-snug text-primary">{post.title}</h3>
+                  <h3 className="text-lg font-bold leading-snug text-white">{post.title}</h3>
                   <p className="flex-1 text-sm leading-relaxed text-muted">{post.excerpt}</p>
 
-                  <div className="flex items-center justify-between border-t border-primary/8 pt-4 text-xs font-medium text-muted">
+                  <div className="flex items-center justify-between border-t border-line pt-4 text-xs font-medium text-muted">
                     <span className="inline-flex items-center gap-1.5">
                       <Calendar size={14} />
                       {dateFormatter.format(new Date(post.date))}
@@ -48,7 +49,7 @@ export default function BlogPreview() {
                     </span>
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary-light">
                     Leer más
                     <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
                   </span>

@@ -8,14 +8,18 @@ const year = new Date().getFullYear();
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
-      <Container className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
+    <footer className="relative overflow-hidden border-t border-white/[0.08] bg-background text-white">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-[-16rem] left-1/2 h-[26rem] w-[56rem] max-w-[160vw] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(139_92_246/0.18),transparent)] blur-2xl"
+      />
+      <Container className="relative grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             <img
               src={avatar}
               alt="Avatar de Profe Jesús Álvarez"
-              className="h-11 w-11 rounded-full border-2 border-accent object-cover object-top"
+              className="h-11 w-11 rounded-full border border-white/15 bg-surface object-cover object-top ring-2 ring-secondary/40"
               width={44}
               height={44}
               loading="lazy"
@@ -34,7 +38,7 @@ export default function Footer() {
             <SmartLink
               key={link.href}
               href={link.href}
-              className="w-fit text-sm text-white/75 transition-colors hover:text-accent"
+              className="w-fit text-sm text-white/65 transition-colors hover:text-secondary-light"
             >
               {link.label}
             </SmartLink>
@@ -67,7 +71,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-accent hover:text-primary"
+                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/[0.04] text-white/80 transition-colors hover:border-secondary/60 hover:bg-secondary/20 hover:text-white"
                 >
                   <Icon size={18} />
                 </a>
@@ -77,7 +81,7 @@ export default function Footer() {
         </div>
       </Container>
 
-      <div className="border-t border-white/10">
+      <div className="relative border-t border-white/[0.08]">
         <Container className="flex flex-col items-center gap-2 py-6 text-xs text-white/45 sm:flex-row sm:justify-between">
           <p>© {year} Profe Jesús Álvarez. Todos los derechos reservados.</p>
           <p>Hecho con dedicación para la comunidad educativa.</p>

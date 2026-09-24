@@ -15,8 +15,8 @@ const MAX_NODES = 110
 
 /**
  * Red neuronal ambiental: nodos que derivan lentamente y se conectan con el
- * puntero. Ocupa el contenedor relativo más cercano (el Hero). Superposición sutil (pointer-events: none) para conservar el tono
- * académico. Se desactiva con "reducir movimiento" y en pantallas táctiles.
+ * puntero. Ocupa el contenedor relativo más cercano (el Hero). Se desactiva
+ * con "reducir movimiento" y en pantallas táctiles.
  */
 export default function NeuralCursor() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -62,18 +62,8 @@ export default function NeuralCursor() {
       mouse.active = false
     }
 
-    // Zona oscura (marco del avatar): allí los nodos y líneas se aclaran.
-    const darkEl = canvas.parentElement?.querySelector('[data-neural-light]')
-    let dark = { l: 0, t: 0, r: 0, b: 0 }
-    const inDark = (x: number, y: number) => x > dark.l && x < dark.r && y > dark.t && y < dark.b
-
     const frame = () => {
       ctx.clearRect(0, 0, w, h)
-      if (darkEl) {
-        const c = canvas.getBoundingClientRect()
-        const e = darkEl.getBoundingClientRect()
-        dark = { l: e.left - c.left, t: e.top - c.top, r: e.right - c.left, b: e.bottom - c.top }
-      }
 
       for (const n of nodes) {
         n.x += n.vx
@@ -101,9 +91,7 @@ export default function NeuralCursor() {
           const d = Math.hypot(a.x - b.x, a.y - b.y)
           if (d < LINK_DIST) {
             const k = 1 - d / LINK_DIST
-            ctx.strokeStyle = inDark((a.x + b.x) / 2, (a.y + b.y) / 2)
-              ? `rgba(147, 197, 253, ${k * 0.45})`
-              : `rgba(37, 99, 235, ${k * 0.16})`
+            ctx.strokeStyle = `rgba(167, 139, 250, ${k * 0.22})`
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -114,16 +102,14 @@ export default function NeuralCursor() {
           const d = Math.hypot(a.x - mouse.x, a.y - mouse.y)
           if (d < MOUSE_DIST) {
             const k = 1 - d / MOUSE_DIST
-            ctx.strokeStyle = inDark(a.x, a.y)
-              ? `rgba(110, 231, 183, ${k * 0.8})`
-              : `rgba(16, 185, 129, ${k * 0.55})`
+            ctx.strokeStyle = `rgba(240, 171, 252, ${k * 0.6})`
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(mouse.x, mouse.y)
             ctx.stroke()
           }
         }
-        ctx.fillStyle = inDark(a.x, a.y) ? 'rgba(191, 219, 254, 0.75)' : 'rgba(37, 99, 235, 0.35)'
+        ctx.fillStyle = 'rgba(221, 214, 254, 0.55)'
         ctx.beginPath()
         ctx.arc(a.x, a.y, 1.6, 0, Math.PI * 2)
         ctx.fill()
@@ -131,8 +117,8 @@ export default function NeuralCursor() {
 
       if (mouse.active) {
         const g = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 90)
-        g.addColorStop(0, 'rgba(16, 185, 129, 0.16)')
-        g.addColorStop(1, 'rgba(16, 185, 129, 0)')
+        g.addColorStop(0, 'rgba(240, 171, 252, 0.18)')
+        g.addColorStop(1, 'rgba(240, 171, 252, 0)')
         ctx.fillStyle = g
         ctx.beginPath()
         ctx.arc(mouse.x, mouse.y, 90, 0, Math.PI * 2)

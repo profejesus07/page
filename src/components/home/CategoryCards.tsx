@@ -6,20 +6,26 @@ import FadeIn from "../ui/FadeIn";
 import SectionHeading from "../ui/SectionHeading";
 import SmartLink from "../ui/SmartLink";
 
-const accentStyles: Record<Category["accent"], { badge: string; text: string; border: string }> = {
-  blue: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
-  green: { badge: "bg-accent/15 text-accent-dark", text: "text-accent-dark", border: "hover:border-accent" },
-  purple: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
-  yellow: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
-  rose: { badge: "bg-secondary/10 text-secondary", text: "text-secondary", border: "hover:border-secondary/40" },
+const violet = { badge: "border-secondary/30 bg-secondary/15 text-secondary-light", text: "text-secondary-light" };
+
+const accentStyles: Record<Category["accent"], { badge: string; text: string }> = {
+  blue: violet,
+  green: { badge: "border-accent/30 bg-accent/15 text-accent-light", text: "text-accent-light" },
+  purple: violet,
+  yellow: violet,
+  rose: violet,
 };
 
 export default function CategoryCards() {
   return (
-    <section id="explorar" className="bg-background py-20 sm:py-28">
+    <section id="explorar" className="relative bg-background py-20 sm:py-28">
       <Container className="flex flex-col items-center gap-14">
         <FadeIn>
-          <SectionHeading title="¿Qué encontrarás aquí?" subtitle="Herramientas para enseñar y aprender mejor" />
+          <SectionHeading
+            eyebrow="Explorar"
+            title="¿Qué encontrarás aquí?"
+            subtitle="Herramientas para enseñar y aprender mejor"
+          />
         </FadeIn>
 
         <div className="grid w-full gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -32,12 +38,13 @@ export default function CategoryCards() {
                 <SmartLink
                   id={category.slug}
                   href={category.href}
-                  className={`group flex h-full scroll-mt-24 flex-col gap-3 rounded-xl border border-line bg-white p-5 shadow-[0_4px_6px_-1px_rgb(0_0_0/0.1)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_30px_-14px_rgba(9,38,74,0.25)] ${accent.border}`}
+                  data-spotlight
+                  className="spotlight-card group flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-line bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_24px_60px_-24px_rgb(139_92_246/0.45)]"
                 >
-                  <div className={`grid h-12 w-12 place-items-center rounded-full ${accent.badge}`}>
+                  <div className={`grid h-11 w-11 place-items-center rounded-xl border ${accent.badge}`}>
                     <Icon size={20} strokeWidth={2.2} />
                   </div>
-                  <h3 className="text-base font-bold text-primary">{category.title}</h3>
+                  <h3 className="text-base font-bold text-white">{category.title}</h3>
                   <p className="flex-1 text-sm leading-relaxed text-muted">{category.description}</p>
                   <span className={`inline-flex items-center gap-1.5 text-sm font-semibold ${accent.text}`}>
                     Ver más

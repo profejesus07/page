@@ -5,28 +5,33 @@
  * Cambia estos valores y todo el sitio se actualiza.
  */
 /* Se cambia solo aquí: el resto del sitio usa estas variables. */
+/* Tema oscuro inspirado en railway.com/pricing. */
 :root {
-  --color-primary: #0f2742; /* Azul noche: identidad, header, footer, títulos */
-  --color-secondary: #2563eb; /* Azul tecnológico: enlaces, interacción, hover */
+  --color-primary: #16131f; /* Paneles y bandas destacadas */
+  --color-secondary: #8b5cf6; /* Violeta: enlaces, interacción, CTA */
   --color-accent: #10b981; /* Verde esmeralda: gamificación, progreso, éxito */
   --color-creative: #f97316; /* Coral: novedades y etiquetas (uso muy moderado) */
-  --color-background: #f8fafc; /* Fondo general */
-  --color-surface: #ffffff; /* Tarjetas y paneles */
-  --color-text: #1e293b; /* Texto principal */
-  --color-text-secondary: #64748b; /* Texto secundario */
+  --color-background: #0b0a12; /* Fondo general casi negro */
+  --color-surface: #13111c; /* Tarjetas */
+  --color-text: #eeedf5; /* Texto principal */
+  --color-text-secondary: #9d9ab0; /* Texto secundario */
 
-  /* Derivados (mantienen contraste AA) */
-  --color-primary-dark: #0a1c31;
-  --color-accent-dark: #047857; /* verde legible sobre fondos claros */
-  --color-accent-light: #6ee7b7; /* verde legible sobre fondos oscuros */
-  --color-creative-dark: #c2410c; /* coral legible como texto sobre claro */
-  --color-border: #e2e8f0;
+  /* Derivados (mantienen contraste AA sobre fondo oscuro) */
+  --color-primary-dark: #0e0c16;
+  --color-secondary-light: #c4b5fd; /* violeta legible como texto */
+  --color-accent-dark: #047857;
+  --color-accent-light: #6ee7b7;
+  --color-creative-dark: #c2410c;
+  --color-border: rgb(255 255 255 / 0.08);
+
+  color-scheme: dark;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
   --color-secondary: var(--color-secondary);
+  --color-secondary-light: var(--color-secondary-light);
   --color-accent: var(--color-accent);
   --color-accent-light: var(--color-accent-light);
   --color-background: var(--color-background);
@@ -119,8 +124,8 @@
   }
 
   ::selection {
-    background: var(--color-accent);
-    color: var(--color-primary);
+    background: var(--color-secondary);
+    color: #fff;
   }
 
   :focus-visible {
@@ -131,25 +136,90 @@
 }
 
 @layer utilities {
-  .underline-scribble {
-    position: relative;
-    white-space: nowrap;
-  }
-  .underline-scribble::after {
-    content: "";
-    position: absolute;
-    left: -2%;
-    right: -2%;
-    bottom: -0.12em;
-    height: 0.22em;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 30 4, 60 18, 100 10 S 170 2, 198 12' fill='none' stroke='%2310B981' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  .text-gradient {
+    background: linear-gradient(95deg, #c4b5fd 0%, #f0abfc 45%, #fdba74 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .bg-dot-grid {
-    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.14) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(circle, rgb(255 255 255 / 0.12) 1px, transparent 1px);
     background-size: 22px 22px;
+  }
+
+  /* Borde de 1px en degradado (tarjeta destacada estilo Railway). */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(140deg, rgb(196 181 253 / 0.7), rgb(240 171 252 / 0.25) 35%, rgb(255 255 255 / 0.04) 65%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /*
+   * Foco que sigue al cursor dentro de la tarjeta. --mx/--my los fija
+   * useSpotlight en cualquier elemento con [data-spotlight].
+   */
+  .spotlight-card {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight-card::before,
+  .spotlight-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .spotlight-card::before {
+    z-index: -1;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(139 92 246 / 0.14), transparent 45%);
+  }
+  .spotlight-card::after {
+    padding: 1px;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgb(196 181 253 / 0.75), transparent 60%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .spotlight-card:hover::before,
+  .spotlight-card:hover::after {
+    opacity: 1;
+  }
+
+  /* Capas del Hero que se iluminan alrededor del cursor. */
+  .hero-spotlight,
+  .hero-grid-reveal {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  [data-spotlight]:hover > .hero-spotlight,
+  [data-spotlight]:hover > .hero-grid-reveal {
+    opacity: 1;
+  }
+  .hero-spotlight {
+    background: radial-gradient(
+      640px circle at var(--mx, 50%) var(--my, 30%),
+      rgb(139 92 246 / 0.16),
+      rgb(236 72 153 / 0.06) 35%,
+      transparent 65%
+    );
+  }
+  .hero-grid-reveal {
+    -webkit-mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 30%), #000, transparent);
+    mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 30%), #000, transparent);
   }
 
   .text-balance {
@@ -175,6 +245,12 @@
     background-image:
       linear-gradient(to right, rgb(148 163 184 / 0.06) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-bright {
+    background-image:
+      linear-gradient(to right, rgb(196 181 253 / 0.28) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(196 181 253 / 0.28) 1px, transparent 1px);
     background-size: 56px 56px;
   }
 
