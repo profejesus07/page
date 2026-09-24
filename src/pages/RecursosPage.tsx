@@ -1,4 +1,6 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Search, X } from "lucide-react";
+import { useDeferredValue } from "react";
+import { useSearchParams } from "react-router-dom";
 import Button from "../components/ui/Button";
 import Container from "../components/ui/Container";
 import FadeIn from "../components/ui/FadeIn";
@@ -18,7 +20,30 @@ const accentStyles: Record<ResourceCategory["accent"], { badge: string; text: st
 
 const totalRecursos = resourceCategories.reduce((sum, category) => sum + category.resources.length, 0);
 
+/** Minúsculas y sin tildes, para que "matematicas" encuentre "Matemáticas". */
+const normalize = (text: string) =>
+  text.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().trim();
+
 export default function RecursosPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("q") ?? "";
+  const deferredQuery = useDeferredValue(query);
+
+  const setQuery = (value: string) =>
+    setSearchParams(value ? { q: value } : {}, { replace: true });
+
+  const terms = normalize(deferredQuery).split(/\s+/).filter(Boolean);
+  const filteredCategories = resourceCategories
+    .map((category) => ({
+      ...category,
+      resources: category.resources.filter((resource) => {
+        const haystack = normalize(`${resource.name} ${resource.description} ${category.title}`);
+        return terms.every((term) => haystack.includes(term));
+      }),
+    }))
+    .filter((category) => category.resources.length > 0);
+  const totalFiltrados = filteredCategories.reduce((sum, category) => sum + category.resources.length, 0);
+
   return (
     <section className="relative overflow-hidden bg-background py-20 sm:py-28">
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_55%_at_50%_0%,black,transparent)]" />
@@ -34,8 +59,45 @@ export default function RecursosPage() {
           </p>
         </FadeIn>
 
+        <FadeIn className="w-full max-w-xl">
+          <div className="flex flex-col items-center gap-2">
+            <label className="relative w-full">
+              <span className="sr-only">Buscar recursos</span>
+              <Search size={18} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-muted" />
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => e.key === "Escape" && setQuery("")}
+                placeholder="Buscar por nombre, uso o categoría…"
+                className="w-full rounded-full border border-line bg-surface/70 py-3 pl-11 pr-11 text-sm text-white placeholder:text-muted outline-none transition-colors focus-visible:border-secondary sm:text-base [&::-webkit-search-cancel-button]:hidden"
+              />
+              {query && (
+                <button
+                  type="button"
+                  aria-label="Limpiar búsqueda"
+                  onClick={() => setQuery("")}
+                  className="absolute right-3 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full text-muted transition-colors hover:bg-white/[0.08] hover:text-white"
+                >
+                  <X size={16} />
+                </button>
+              )}
+            </label>
+            {terms.length > 0 && (
+              <p aria-live="polite" className="font-mono text-xs text-muted">
+                {totalFiltrados} de {totalRecursos} recursos
+              </p>
+            )}
+          </div>
+        </FadeIn>
+
         <div className="flex w-full flex-col gap-12">
-          {resourceCategories.map((category, categoryIndex) => {
+          {filteredCategories.length === 0 && (
+            <p className="py-10 text-center text-muted">
+              No se encontraron recursos para «{deferredQuery.trim()}». Prueba con otra palabra.
+            </p>
+          )}
+          {filteredCategories.map((category, categoryIndex) => {
             const accent = accentStyles[category.accent];
             const CategoryIcon = category.icon;
 
