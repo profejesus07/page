@@ -2,31 +2,28 @@ import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 import FadeIn from "../ui/FadeIn";
-import NeuralCursor from "../ui/NeuralCursor";
+import MagicSparkTrail from "../ui/MagicSparkTrail";
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      data-spotlight
       className="relative overflow-hidden bg-background pb-24 pt-16 sm:pt-24 lg:pb-32 lg:pt-28"
     >
       <div
         aria-hidden
         className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_75%_65%_at_50%_0%,black,transparent)]"
       />
-      <div aria-hidden className="hero-grid-reveal bg-grid-bright pointer-events-none absolute inset-0" />
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-[-20rem] h-[38rem] w-[64rem] max-w-[160vw] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(139_92_246/0.35),rgb(236_72_153/0.12)_55%,transparent)] blur-2xl"
       />
-      <div aria-hidden className="hero-spotlight pointer-events-none absolute inset-0" />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
       />
 
-      <NeuralCursor />
+      <MagicSparkTrail />
 
       <Container className="relative grid items-center gap-14 lg:grid-cols-[52%_48%] lg:gap-10">
         <FadeIn className="flex flex-col items-start gap-6">

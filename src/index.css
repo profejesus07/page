@@ -199,29 +199,6 @@
     opacity: 1;
   }
 
-  /* Capas del Hero que se iluminan alrededor del cursor. */
-  .hero-spotlight,
-  .hero-grid-reveal {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  [data-spotlight]:hover > .hero-spotlight,
-  [data-spotlight]:hover > .hero-grid-reveal {
-    opacity: 1;
-  }
-  .hero-spotlight {
-    background: radial-gradient(
-      640px circle at var(--mx, 50%) var(--my, 30%),
-      rgb(139 92 246 / 0.16),
-      rgb(236 72 153 / 0.06) 35%,
-      transparent 65%
-    );
-  }
-  .hero-grid-reveal {
-    -webkit-mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 30%), #000, transparent);
-    mask-image: radial-gradient(260px circle at var(--mx, 50%) var(--my, 30%), #000, transparent);
-  }
-
   .text-balance {
     text-wrap: balance;
   }
@@ -247,13 +224,6 @@
       linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
     background-size: 56px 56px;
   }
-  .bg-grid-bright {
-    background-image:
-      linear-gradient(to right, rgb(196 181 253 / 0.28) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(196 181 253 / 0.28) 1px, transparent 1px);
-    background-size: 56px 56px;
-  }
-
   .scanlines {
     background-image: repeating-linear-gradient(
       0deg,

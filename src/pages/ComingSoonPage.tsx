@@ -6,9 +6,11 @@ interface ComingSoonPageProps {
   title: string;
   description: string;
   icon?: LucideIcon;
+  /** Si la sección ya tiene un portal real, se muestra un CTA en vez de "Próximamente". */
+  link?: { href: string; label: string };
 }
 
-export default function ComingSoonPage({ title, description, icon: Icon = Sparkles }: ComingSoonPageProps) {
+export default function ComingSoonPage({ title, description, icon: Icon = Sparkles, link }: ComingSoonPageProps) {
   return (
     <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-background py-20">
       <div
@@ -24,14 +26,27 @@ export default function ComingSoonPage({ title, description, icon: Icon = Sparkl
           <div className="grid h-16 w-16 place-items-center rounded-2xl border border-secondary/30 bg-secondary/15 text-secondary-light">
             <Icon size={30} strokeWidth={2.2} />
           </div>
-          <span className="rounded-full border border-creative/30 bg-creative/15 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-orange-300">
-            Próximamente
-          </span>
+          {link ? (
+            <span className="rounded-full border border-accent/30 bg-accent/15 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-accent-light">
+              Disponible
+            </span>
+          ) : (
+            <span className="rounded-full border border-creative/30 bg-creative/15 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-orange-300">
+              Próximamente
+            </span>
+          )}
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{title}</h1>
           <p className="text-balance leading-relaxed text-muted">{description}</p>
-          <Button href="/" variant="secondary">
-            Volver al inicio
-          </Button>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            {link && (
+              <Button href={link.href} variant="accent">
+                {link.label}
+              </Button>
+            )}
+            <Button href="/" variant="secondary">
+              Volver al inicio
+            </Button>
+          </div>
         </div>
       </Container>
     </section>

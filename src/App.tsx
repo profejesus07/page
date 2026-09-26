@@ -36,7 +36,8 @@ export default function App() {
               <ComingSoonPage
                 icon={ClipboardCheck}
                 title="Plataforma de exámenes"
-                description="Evalúa, realiza seguimiento y genera reportes fácilmente. Esta plataforma estará disponible próximamente."
+                description="Evalúa, realiza seguimiento y genera reportes fácilmente."
+                link={{ href: "https://examenes-santarita.vercel.app/login", label: "Ir a la plataforma" }}
               />
             }
           />
