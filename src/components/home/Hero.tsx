@@ -73,8 +73,8 @@ export default function Hero() {
               <Mascot
                 interactive
                 alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-                width={483}
-                height={650}
+                width={719}
+                height={1103}
                 fetchPriority="high"
                 className="h-full"
                 imgClassName="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
