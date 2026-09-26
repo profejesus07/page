@@ -1,5 +1,5 @@
 import avatar from "../../assets/images/profe-jesus-avatar.webp";
-import { navLinks } from "../../data/navigation";
+import { legalLinks, navLinks } from "../../data/navigation";
 import { socialLinks } from "../../data/social";
 import Container from "../ui/Container";
 import SmartLink from "../ui/SmartLink";
@@ -82,8 +82,15 @@ export default function Footer() {
       </Container>
 
       <div className="relative border-t border-white/[0.08]">
-        <Container className="flex flex-col items-center gap-2 py-6 text-xs text-white/45 sm:flex-row sm:justify-between">
+        <Container className="flex flex-col items-center gap-4 py-6 text-xs text-white/45 sm:flex-row sm:justify-between">
           <p>© {year} Profe Jesús Álvarez. Todos los derechos reservados.</p>
+          <nav aria-label="Enlaces legales" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5">
+            {legalLinks.map((link) => (
+              <SmartLink key={link.href} href={link.href} className="transition-colors hover:text-secondary-light">
+                {link.label}
+              </SmartLink>
+            ))}
+          </nav>
           <p>Hecho con dedicación para la comunidad educativa.</p>
         </Container>
       </div>

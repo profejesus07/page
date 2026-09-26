@@ -8,6 +8,9 @@ import EldoriaPage from "./pages/EldoriaPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import RecursosPage from "./pages/RecursosPage";
+import AvisoLegalPage from "./pages/legal/AvisoLegalPage";
+import PrivacidadPage from "./pages/legal/PrivacidadPage";
+import TerminosPage from "./pages/legal/TerminosPage";
 
 export default function App() {
   return (
@@ -81,6 +84,10 @@ export default function App() {
               />
             }
           />
+
+          <Route path="aviso-legal" element={<AvisoLegalPage />} />
+          <Route path="privacidad" element={<PrivacidadPage />} />
+          <Route path="terminos" element={<TerminosPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
