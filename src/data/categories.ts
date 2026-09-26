@@ -11,6 +11,14 @@ export const categories: Category[] = [
     href: "/academia-code",
   },
   {
+    slug: "eldoria",
+    title: "Chronicles of Eldoria",
+    description: "Aventura gamificada para aprender inglés: mapa, misiones, guardianes y rangos.",
+    icon: Wand2,
+    accent: "rose",
+    href: "/eldoria",
+  },
+  {
     slug: "recursos",
     title: "Recursos digitales",
     description: "Materiales interactivos, OVA, presentaciones, videos y más.",
@@ -25,13 +33,5 @@ export const categories: Category[] = [
     icon: ClipboardCheck,
     accent: "yellow",
     href: "/examenes",
-  },
-  {
-    slug: "eldoria",
-    title: "Chronicles of Eldoria",
-    description: "Aventura gamificada para aprender inglés: mapa, misiones, guardianes y rangos.",
-    icon: Wand2,
-    accent: "rose",
-    href: "/eldoria",
   },
 ];
