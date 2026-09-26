@@ -1,8 +1,8 @@
-import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
 import CursorGlow from "../ui/CursorGlow";
 import FadeIn from "../ui/FadeIn";
+import Mascot from "../ui/Mascot";
 
 export default function Hero() {
   return (
@@ -69,14 +69,17 @@ export default function Hero() {
             <div className="absolute -bottom-10 -left-6 h-32 w-32 rounded-full bg-accent/25 blur-2xl" />
             <div className="absolute left-1/2 top-[30%] h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/40 blur-2xl" />
 
-            <img
-              src={avatar}
-              alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-              className="absolute bottom-0 left-1/2 h-[102%] w-auto -translate-x-1/2 select-none object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
-              width={483}
-              height={650}
-              fetchPriority="high"
-            />
+            <div className="absolute bottom-0 left-1/2 h-[102%] w-auto -translate-x-1/2">
+              <Mascot
+                interactive
+                alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
+                width={483}
+                height={650}
+                fetchPriority="high"
+                className="h-full"
+                imgClassName="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
+              />
+            </div>
 
             <div aria-hidden className="gradient-border pointer-events-none absolute inset-0 rounded-[inherit]" />
           </div>

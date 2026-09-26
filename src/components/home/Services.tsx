@@ -14,6 +14,7 @@ export default function Services() {
       className="relative overflow-hidden border-y border-white/[0.06] bg-primary-dark py-20 sm:py-28"
     >
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]" />
+      <div className="bg-stars pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_10%,black,transparent)]" />
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-secondary/60 to-transparent" />
       <div className="pointer-events-none absolute -right-24 top-1/3 h-80 w-80 rounded-full bg-secondary/15 blur-[120px]" />
       <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-accent/10 blur-[120px]" />
@@ -35,9 +36,9 @@ export default function Services() {
               <FadeIn key={service.title} delay={index * 90}>
                 <div
                   data-spotlight
-                  className="spotlight-card flex h-full items-start gap-4 rounded-2xl border border-line bg-surface/70 p-6 transition-colors duration-300 hover:border-white/15"
+                  className="spotlight-card group flex h-full items-start gap-4 rounded-2xl border border-line bg-surface/70 p-6 transition-colors duration-300 hover:border-white/15"
                 >
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-secondary/30 bg-secondary/15 text-secondary-light">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-secondary/30 bg-secondary/15 text-secondary-light transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110">
                     <Icon size={22} strokeWidth={2.2} />
                   </div>
                   <div>

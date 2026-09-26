@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { useSpotlight } from "../../hooks/useSpotlight";
+import BackToTop from "../ui/BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -13,6 +14,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }

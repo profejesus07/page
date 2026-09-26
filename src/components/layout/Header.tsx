@@ -62,7 +62,7 @@ export default function Header() {
             alt="Avatar de Profe Jesús Álvarez"
             width={44}
             height={44}
-            className="h-11 w-11 rounded-full border border-white/15 bg-surface object-cover object-top ring-2 ring-secondary/40"
+            className="h-11 w-11 rounded-full border border-white/15 bg-surface object-cover object-top ring-2 ring-secondary/40 transition-transform duration-300 ease-out hover:-rotate-6 hover:scale-105"
           />
           <span className="flex flex-col leading-tight">
             <span className="text-sm font-medium text-white/60">Profe</span>

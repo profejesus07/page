@@ -41,7 +41,9 @@ export default function CategoryCards() {
                   data-spotlight
                   className="spotlight-card group flex h-full scroll-mt-24 flex-col gap-3 rounded-2xl border border-line bg-surface/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-white/15 hover:shadow-[0_24px_60px_-24px_rgb(139_92_246/0.45)]"
                 >
-                  <div className={`grid h-11 w-11 place-items-center rounded-xl border ${accent.badge}`}>
+                  <div
+                    className={`grid h-11 w-11 place-items-center rounded-xl border transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110 ${accent.badge}`}
+                  >
                     <Icon size={20} strokeWidth={2.2} />
                   </div>
                   <h3 className="text-base font-bold text-white">{category.title}</h3>

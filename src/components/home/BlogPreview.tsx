@@ -30,7 +30,7 @@ export default function BlogPreview() {
                     <span className="rounded-full border border-secondary/30 bg-secondary/15 px-3 py-1 text-xs font-bold text-secondary-light">
                       {post.category}
                     </span>
-                    <div className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-white/[0.04] text-ink">
+                    <div className="grid h-9 w-9 place-items-center rounded-lg border border-line bg-white/[0.04] text-ink transition-transform duration-300 ease-out group-hover:-rotate-6 group-hover:scale-110">
                       <Icon size={18} strokeWidth={2.2} />
                     </div>
                   </div>
