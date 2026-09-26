@@ -1,8 +1,8 @@
 import avatar from "../../assets/images/profe-jesus-avatar.webp";
 import Button from "../ui/Button";
 import Container from "../ui/Container";
+import CursorGlow from "../ui/CursorGlow";
 import FadeIn from "../ui/FadeIn";
-import MagicSparkTrail from "../ui/MagicSparkTrail";
 
 export default function Hero() {
   return (
@@ -23,7 +23,7 @@ export default function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
       />
 
-      <MagicSparkTrail />
+      <CursorGlow />
 
       <Container className="relative grid items-center gap-14 lg:grid-cols-[52%_48%] lg:gap-10">
         <FadeIn className="flex flex-col items-start gap-6">
