@@ -4,6 +4,7 @@ import Layout from "./components/layout/Layout";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import AcademiaCodePage from "./pages/AcademiaCodePage";
 import ComingSoonPage from "./pages/ComingSoonPage";
+import EldoriaPage from "./pages/EldoriaPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import RecursosPage from "./pages/RecursosPage";
@@ -27,6 +28,7 @@ export default function App() {
             }
           />
           <Route path="academia-code" element={<AcademiaCodePage />} />
+          <Route path="eldoria" element={<EldoriaPage />} />
           <Route path="recursos" element={<RecursosPage />} />
           <Route
             path="examenes"

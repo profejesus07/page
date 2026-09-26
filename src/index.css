@@ -355,3 +355,66 @@
     display: none;
   }
 }
+
+/*
+ * Chronicles of Eldoria: bloque oscuro con estética de grimorio mágico
+ * (violeta, fucsia y dorado). Redefine los tokens de superficie/texto
+ * solo dentro de la sección.
+ */
+.eldoria-theme {
+  --color-background: #0a0616;
+  --color-surface: #150f26;
+  --color-muted: #b9b3d6;
+  --color-line: rgb(217 180 255 / 0.16);
+  --color-accent: #eab308;
+  --color-accent-light: #facc15;
+  color: #f5f3ff;
+  color-scheme: dark;
+}
+
+@layer utilities {
+  .scanlines-gold {
+    background-image: repeating-linear-gradient(
+      0deg,
+      rgb(234 179 8 / 0.05) 0px,
+      rgb(234 179 8 / 0.05) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  }
+
+  .hud-corners-gold {
+    position: relative;
+  }
+  .hud-corners-gold::before,
+  .hud-corners-gold::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: #eab308;
+    border-style: solid;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+  .hud-corners-gold::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+  .hud-corners-gold::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+@keyframes eldoria-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(234 179 8 / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 24px 4px rgb(234 179 8 / 0.35);
+  }
+}

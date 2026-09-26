@@ -67,3 +67,19 @@ export interface MissionPhase {
     lines: string[];
   };
 }
+
+/** Fase narrativa de Chronicles of Eldoria. */
+export interface StoryPhase {
+  id: string;
+  index: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: LucideIcon;
+  /** Estado de Mutis, el Ladrón de Palabras, mientras esta fase está activa. */
+  mutis: {
+    status: string;
+    stolen: number; // 0–100 % de palabras aún robadas (ambientación)
+    lines: string[];
+  };
+}

@@ -1,4 +1,4 @@
-import { ClipboardCheck, MonitorPlay, Terminal, Users } from "lucide-react";
+import { ClipboardCheck, MonitorPlay, Terminal, Wand2 } from "lucide-react";
 import type { Category } from "../types/content";
 
 export const categories: Category[] = [
@@ -27,11 +27,11 @@ export const categories: Category[] = [
     href: "/examenes",
   },
   {
-    slug: "social-network",
-    title: "Social Network",
-    description: "La red social de la comunidad educativa: comparte, conecta y participa.",
-    icon: Users,
+    slug: "eldoria",
+    title: "Chronicles of Eldoria",
+    description: "Aventura gamificada para aprender inglés: mapa, misiones, guardianes y rangos.",
+    icon: Wand2,
     accent: "rose",
-    href: "http://192.168.1.4:4000/",
+    href: "/eldoria",
   },
 ];
