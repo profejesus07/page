@@ -2,7 +2,7 @@ import Button from "../ui/Button";
 import Container from "../ui/Container";
 import CursorGlow from "../ui/CursorGlow";
 import FadeIn from "../ui/FadeIn";
-import Mascot from "../ui/Mascot";
+import HeroTetris from "./HeroTetris";
 
 export default function Hero() {
   return (
@@ -63,23 +63,7 @@ export default function Hero() {
             className="pointer-events-none absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/30 blur-[110px]"
           />
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[16rem] overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#1f1933] to-surface shadow-[0_40px_120px_-30px_rgb(139_92_246/0.6)] sm:max-w-xs lg:max-w-sm">
-            <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_30%,black,transparent)]" />
-
-            <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-fuchsia-500/25 blur-2xl" />
-            <div className="absolute -bottom-10 -left-6 h-32 w-32 rounded-full bg-accent/25 blur-2xl" />
-            <div className="absolute left-1/2 top-[30%] h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-secondary/40 blur-2xl" />
-
-            <div className="absolute bottom-0 left-1/2 h-[102%] w-auto -translate-x-1/2">
-              <Mascot
-                interactive
-                alt="Avatar 3D de Profe Jesús Álvarez, personaje con lentes y camisa negra, identidad visual del sitio"
-                width={719}
-                height={1103}
-                fetchPriority="high"
-                className="h-full"
-                imgClassName="h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
-              />
-            </div>
+            <HeroTetris className="h-full w-full rounded-[inherit]" />
 
             <div aria-hidden className="gradient-border pointer-events-none absolute inset-0 rounded-[inherit]" />
           </div>
